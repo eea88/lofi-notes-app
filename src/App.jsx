@@ -8,6 +8,7 @@ import EventDetails from "./pages/EventDetails";
 import About from "./pages/About";
 import CreateUser from "./pages/CreateUser";
 import UserPage from "./pages/UserPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/users/:userId" element={<UserPage />} />
         <Route path="/users/create" element={<CreateUser />} />
         <Route path="/about" element={<About />} />
-        <Route path="*" element={<h2>Not Found</h2>}/>
+        <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </>
   );
