@@ -13,7 +13,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 function App() {
   return (
     <>
-      <h1>Hello World!</h1>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

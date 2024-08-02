@@ -5,11 +5,11 @@ function Navbar() {
     return (
         <nav>
             <Link to="/">
-                <h2>App Name</h2>
+                <h1>Lofi Notes</h1>
             </Link>
             <Link>
                 <div className="user-icon">
-                    <img src="" alt="user-image" />
+                    <img src="" alt="" />
                 </div>
             </Link>
         </nav>
