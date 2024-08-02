@@ -1,8 +1,14 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Routes
 
-Currently, two official plugins are available:
+The Routes in the App work this way:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Pages	| URL	| Routes	| Other Links|
+| --- | --- | --- | ---|
+|App	|	|	|
+|Home	|./	|CreateEvent	|CreateUser
+|CreateEvent	|./users/:userid/createevent	|User Page	
+|EventDetails	|./users/:userid/events/:eventnumber | |Add, Invite, Share
+|UserPage	|./users/:userid	|CreateEvent, EventDetails-List	
+|CreateUser	|./users/create		
+|About			
