@@ -36,7 +36,7 @@ p {
 
   --primary-color: #e3eff7;
   --primary-bg-gradient: linear-gradient(to bottom, rgb(109,114,210), rgb(114,233,233));
-  --secondary-bg-gradient: linear-gradient(to top, rgb(195,119,185),rgb(131,121,199));
+  --secondary-bg-gradient: linear-gradient(to bottom, rgb(195,119,185),rgb(131,121,199));
   --text1-color: #f7fbff;
   --text2-color: #222222;
   --button-color: rgb(131,121,199);
