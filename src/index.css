@@ -1,13 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Mina:wght@400;700&family=VT323&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 8px;
+  
+}
+
 
 body {
   min-height: 100vh;
+  font-size: 1rem;
+  background: var(--primary-bg-gradient);
+   font-family:"Aldrich" , sans-serif; 
+}
+
+h1 {
+  font-size: 2rem; /* This will be 16px */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem; /* This will be 12px */
 }
 
 :root {
   min-height: 100vh;
+
+  --primary-color: #e3eff7;
+  --primary-bg-gradient: linear-gradient(to bottom, rgb(109,114,210), rgb(114,233,233));
+  --secondary-bg-gradient: linear-gradient(to top, rgb(195,119,185),rgb(131,121,199));
+  --text1-color: #f7fbff;
+  --text2-color: #222222;
+  --button-color: rgb(131,121,199);
 }
+
+
+
+/* Fonts: 
+
+VT323 
+Press Start 2P*/
+
