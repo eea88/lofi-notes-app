@@ -1,0 +1,65 @@
+.user-page-section {
+    width: 100vw;
+    height: 100vh;
+   
+    }
+    
+    .create-event-container {
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+    
+        button {
+            width: 60vw;
+            height: 5vh;
+            border: none;
+            border-radius: 15px;
+            font-family: "Aldrich";
+            font-size: 3rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    
+    }
+
+    .events-container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+
+    .event-card {
+        padding-left: 20px;
+        padding-top: 20px;
+        background: var(--secondary-bg-gradient);
+        margin-top: 30px;
+        width: 70vw;
+        height: 20vh;
+        
+        border-radius: 15px;
+        font-family: "Aldrich";
+        font-size: 3rem;
+        display: flex;
+        align-items: fl;
+        justify-content: flex-start;
+        line-height: 30px;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 2rem;
+        }
+
+
+    }
