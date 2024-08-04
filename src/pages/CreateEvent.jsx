@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function CreateEvent (){
-    /* const [id, setId] = useState(1);
-    const [count, setCount] = useState(1) */
-    const [createdAt, setCreatedAt] = useState("");
+    
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [userId, setUserId] = useState(1);
@@ -34,9 +32,11 @@ const postNewEvent = (event) => {
   };
 
   return (
-    <>
-      <h1> Let's create an Event!</h1>
-      <form onSubmit={postNewEvent}>
+    <section className="create-event-section">
+      <div className="title-create-event">
+      <h2> Let's create an Event!</h2>
+      </div>
+      <form className="event-form" onSubmit={postNewEvent}>
         <label> What's the name of your event?</label>
         <input
           required
@@ -57,7 +57,7 @@ const postNewEvent = (event) => {
       <Link to="/">
         <button>Go back</button>
       </Link>
-    </>
+    </section>
   );
 }
 
