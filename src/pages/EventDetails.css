@@ -44,6 +44,8 @@
     justify-content: center;
     margin-top: 5rem;
 
+  
+
     button {
         font-family: "aldrich", sans-serif;
         
@@ -61,4 +63,30 @@
         color: #222222;
 
     }
+}
+
+.edit-button-container {
+   
+    gap:10px;
+}
+
+.form-container {
+    
+    width: 70vw ;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-top: 20px;
+    input {
+        width: 20rem;
+    }
+
+    textarea {
+        width: 33rem;
+        height: 40rem;
+    }
+    gap:20px;
 }
