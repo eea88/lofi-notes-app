@@ -35,6 +35,9 @@ return (
         <li className='event-card-container'>
             <h2>{event.title}</h2>
             <p>{event.description}</p>
+            <div className='edit-button-container'>
+            <button>Edit</button>
+            </div>
             
             
         </li>
