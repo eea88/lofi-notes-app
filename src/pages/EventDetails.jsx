@@ -9,9 +9,8 @@ function EventDetails() {
   const { eventId } = useParams();
   const [event, setEvent] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
-  const [title,setTitle] = useState("")
-  const [description,setDescription] = useState("")
-
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   function getEvent() {
     supabase
@@ -26,11 +25,16 @@ function EventDetails() {
     getEvent();
   }, []);
 
+  useEffect(() => {
+    setTitle(event.title);
+    setDescription(event.description);
+  }, [event]);
+
   const handleEditClick = () => {
-    setIsEditing(true)
+    setIsEditing(true);
   };
   const handleCancelClick = () => {
-    setIsEditing(false)
+    setIsEditing(false);
   };
 
   const handleSubmission = (event) => {
@@ -45,7 +49,6 @@ function EventDetails() {
       })
       .catch((error) => console.error(error));
   };
-  
 
   if (isEditing) {
     return (
@@ -53,26 +56,24 @@ function EventDetails() {
         <li className="event-card-container">
           <form onSubmit={handleSubmission}>
             <div className="form-container">
-
-            <label className="text-inputs">Title</label>
-            <input
-              type="text"
-              value={title}
-              onChange={(event) => setTitle(event.target.value)}
-            />
-            <label className="text-inputs">Description</label>
-            <textarea
-              type="text"
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-            />
+              <label className="text-inputs">Title</label>
+              <input
+                type="text"
+                value={title}
+                onChange={(event) => setTitle(event.target.value)}
+              />
+              <label className="text-inputs">Description</label>
+              <textarea
+                type="text"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+              />
             </div>
             <div className="edit-button-container">
-            <button type="submit">Save</button>
-            <button type="button" onClick={handleCancelClick}>
-              Cancel
-            </button>
-
+              <button type="submit">Save</button>
+              <button type="button" onClick={handleCancelClick}>
+                Cancel
+              </button>
             </div>
           </form>
         </li>
@@ -84,6 +85,25 @@ function EventDetails() {
         <li className="event-card-container">
           <h2>{event.title}</h2>
           <p>{event.description}</p>
+
+          <div className="task-container">
+            <div className="task">
+              <img src="" alt="" />
+              <p>Participant: Buy Beer & cigarretes.</p>
+              <div className="check-box-container">
+                <input type="checkbox" />
+              </div>
+            </div>
+            <div className="task">
+              <img src="" alt="" />
+              <p>Participant: Buy Beer & cigarretes.</p>
+              <div className="check-box-container">
+                <input type="checkbox" />
+              </div>
+            </div>
+            <button className="add-task-button">+</button>
+          </div>
+
           <div className="edit-button-container">
             <button onClick={handleEditClick}>Edit</button>
           </div>
@@ -92,6 +112,5 @@ function EventDetails() {
     );
   }
 }
-
 
 export default EventDetails;
