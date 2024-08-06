@@ -1,11 +1,11 @@
 .warning-task-layout {
     backdrop-filter: blur(10px);
-    height: 20%;
-    left: 0;
+    height: 50%;
     position: absolute;
-    top: 0;
-    width: 20%;
-    /* transition-delay: 50ms; */
+    top: 27vh;
+    left: 27vw;
+    width: 50%;
+    transition-delay: 50ms;
     z-index: 100;
   }
   /* .warning-card {
