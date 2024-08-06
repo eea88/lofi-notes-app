@@ -1,17 +1,18 @@
 .user-page-section {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
    
     }
     
     .create-event-container {
-        
+      
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 1rem;
-        height: 40vh;
+        height: 10vh;
         font-size: 3rem;
+        margin-top: 100px;
     
         button {
             width: 60vw;
@@ -23,24 +24,20 @@
             text-align: center;
             display: flex;
             align-items: center;
-            justify-content: center;   
-            margin-top: 30rem;
-            
+            justify-content: center;     
         }
+
         button:hover{
             cursor: pointer;
             transform: scale(1.1);
         }
         
-        a {
-            text-decoration: none;
-            
-        }
     }
+   
 
     .events-container {
         width: 100vw;
-        height: 100vh;
+        height: 80vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -49,46 +46,71 @@
         gap: 2rem;
         margin-left: 1rem;
         margin-right: 1rem;
+        z-index: 1;
+        
+        
+        
     }
 
 
     .event-card {
-        padding-left: 20px;
-        padding-top: 20px;
+        
         background: var(--secondary-bg-gradient);
-        margin-top: 30px;
+        margin-top: 3px;
         width: 40vw;
-        height: 20vh;
+        height: 10vh;
         max-height: 40vh;
         position: relative;
-        
+        z-index: 2;
         border-radius: 15px;
         font-family: "Aldrich";
-        font-size: 3rem;
         display: flex;
-        align-items: fl;
-        justify-content: flex-start;
-        line-height: 30px;
+        align-items: center;
+        justify-content: center;
 
         h2 {
-            font-size: 3rem;
+            font-size: 2.2rem;
+            
         }
 
         p {
             font-size: 2rem;
         }
-        button{
+
+    
+
+        button:hover{
+            cursor: pointer;
+            font-size: 3rem;
+
+        }
+    }
+
+    .delete-button {
+        
+            border: solid rgba(0, 0, 0, 0.345) 1px;
+            border-radius: 50%;
             background-color: transparent;
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 5vh;
-            height: 5vh;
+            top:-11px;
+            right: -5px;
+            width: 3vh;
+            height: 3vh;
             padding: 0;
             margin: 0;
             font-size: 2rem;
-        }
-        button:hover{
-            cursor: pointer;
-        }
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            z-index: 5;
+    }
+
+    .delete-button:hover {
+        font-size: 2.2rem;
+    }
+
+    .event-relative {
+        position: relative;
+
     }

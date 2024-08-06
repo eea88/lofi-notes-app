@@ -11,7 +11,6 @@ function UserPage() {
   const [showWarning, setShowWarning] = useState(false);
   const [idToDelete, setIdToDelete] = useState(null);
   const { userId } = useParams();
- 
 
   function getEvents() {
     supabase
@@ -25,18 +24,18 @@ function UserPage() {
     getEvents();
   }, []);
 
-  function deleteEvent (id) {
+  function deleteEvent(id) {
     //console.log("Attempting to delete event with ID:", id); // Debugging log
     supabase
       .from("events")
       .delete()
       .eq("id", id)
-      .then(
-        () => {setShowWarning(false);
-         getEvents() }
-      )
+      .then(() => {
+        setShowWarning(false);
+        getEvents();
+      })
       .catch((error) => console.error(error));
-  };
+  }
 
   const displayWarning = (id) => {
     console.log("Display warning");
@@ -58,17 +57,25 @@ function UserPage() {
       <ul className="events-container">
         {events.map((eachEvent) => {
           return (
-
-              <Link key={eachEvent.id} to={`/users/${userId}/events/${eachEvent.id}`}>
-            <li className="event-card">
-              
-              <div >
-                <h2>{eachEvent.title}</h2>
-                <p>{eachEvent.description}</p>
-                <button onClick={() => displayWarning(eachEvent.id)}>❌</button>
-              </div>
-            </li>
+            <div className="event-relative" key={eachEvent.id}>
+              <Link
+                
+                to={`/users/${userId}/events/${eachEvent.id}`}
+              >
+                <li className="event-card">
+                  <div>
+                    <h2>{eachEvent.title}</h2>
+                    {/* <p>{eachEvent.description}</p> */}
+                  </div>
+                </li>
               </Link>
+              <button
+                className="delete-button"
+                onClick={() => displayWarning(eachEvent.id)}
+              >
+                x
+              </button>
+            </div>
           );
         })}
       </ul>
