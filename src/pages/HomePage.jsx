@@ -1,13 +1,14 @@
 import './HomePage.css'
 import { Link } from 'react-router-dom';
 import cloud from '../assets/cloud.png'
+import cloud2 from '../assets/cloud2.png'
 import stars from '../assets/stars.png'
 
 function HomePage (){
     return(
         <section>
             <img id="cloud1" src={cloud} alt="cloud" />
-            <img id="cloud2" src={cloud} alt="cloud" />
+            <img id="cloud2" src={cloud2} alt="cloud" />
             <img id="stars" src={stars} alt="stars" />
             <div className="welcome">
                 <h2>Welcome to</h2>
@@ -32,6 +33,9 @@ function HomePage (){
                         <button>SIGN IN</button>
                     </Link>
                 </div>
+                    <Link to="/users/1">
+                        <button className="guest-btn">CREATE AS GUEST</button>
+                    </Link>
             </form>
         </section>
     )
