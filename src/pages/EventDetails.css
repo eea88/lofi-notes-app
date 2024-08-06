@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    flex-direction: column;
+    overflow:scroll ;
 
 }
 .event-card-container {
@@ -18,6 +20,7 @@
     border-radius: 15px;
     list-style: none;
     overflow: scroll;
+    margin-top: 10rem;
 
 
     h2 {
@@ -151,5 +154,32 @@
     cursor: pointer;
 }
 
+
+.back-button-container {
+    width: 70vw ; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    button {
+        font-family: "aldrich", sans-serif;
+        
+        width: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30rem;
+        height: 5rem;
+        font-size: 3rem;
+    
+        border: none;
+        border-radius: 2rem;
+        background-color: white;
+        color: #222222;
+
+    }
+}
 
 

@@ -107,7 +107,14 @@ function EventDetails() {
           <div className="edit-button-container">
             <button onClick={handleEditClick}>Edit</button>
           </div>
+          
+         
         </li>
+          <Link to="/users/:userId">
+          <div className="back-button-container">
+            <button>Back</button>
+          </div>
+          </Link>
       </ul>
     );
   }

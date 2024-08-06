@@ -7,7 +7,7 @@ function Navbar() {
             <Link to="/">
                 <h1>Lofi Notes</h1>
             </Link>
-            <Link>
+            <Link to="/users/:userId">
                 <div className="user-icon">
                     <img src="" alt="" />
                 </div>
