@@ -3,8 +3,51 @@ import { Link } from 'react-router-dom';
 import cloud from '../assets/cloud.png'
 import cloud2 from '../assets/cloud2.png'
 import stars from '../assets/stars.png'
+import supabase from '../supabase/config';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage (){
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const getSession = async() => {
+        try {
+            const session = await supabase.auth.getSession()
+
+            if(session.data.session.expores_at > Date.now() / 1000) {
+                console.log("Logged in");
+            } else {
+                console.log("Not logged in");
+                                        
+            }
+        } catch (error) {
+            console.log("Not logged in", error);
+            
+        }
+
+    }
+
+    useEffect(() => {
+        getSession();
+    }, [])
+
+    function handleLogin(event) {
+        event.preventDefault();
+        supabase.auth
+            .signInWithPassword({
+                email,
+                password
+            })
+            .then((response) => {
+                console.log(response)
+                navigate(`/users/${response.data.user.id}`)
+            })
+            .catch((err) => console.error(err))
+    }
+
     return(
         <section className="homepage">
             <img id="cloud1" src={cloud} alt="cloud" />
@@ -16,15 +59,15 @@ function HomePage (){
                 <p>An app to create, edit and share notes, events, tasks and more!</p>
             </div>
 
-            <form>
+            <form onSubmit={handleLogin}>
                 <div className="user-login">
                     <label>
                         Email
-                        <input type="email"/>
+                        <input type="email" value={email} onChange={(event) => setEmail(event.target.value)}/>
                     </label>
                     <label>
                         Password
-                        <input type="password"/>
+                        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
                     </label>
                 </div>
                 <div className="homepage-btn">

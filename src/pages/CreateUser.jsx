@@ -25,17 +25,7 @@ function CreateUser (){
                     email, 
                     password
                 })
-                .then(({user, error}) => {
-                    if(error) {
-                        console.error(error);
-                    } else {
-                        setUser(user)
-                        return supabase
-                            .from('users')
-                            .insert([{username, email: user.email, password: user.password}])
-                            .catch((err) => console.error(err))
-                    }
-                })
+                .then(navigate("/"))
                 .catch((err) => console.error(err)
                 )
                 .finally(() => {setIsSubmitting(false)})
