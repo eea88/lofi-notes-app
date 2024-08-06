@@ -73,7 +73,7 @@ function HomePage (){
                 <div className="homepage-btn">
                     <button type="submit">LOG IN</button>
                     <Link to="/users/create">
-                        <button>SIGN IN</button>
+                        <button>SIGN UP</button>
                     </Link>
                 </div>
                     <Link to="/users/1">
