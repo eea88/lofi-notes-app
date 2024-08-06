@@ -33,14 +33,22 @@ function CreateEvent() {
       .select()
       .then((response) => {
         console.log(response.data[0].id);
-        navigate(`./users/${userId}/events/${response.data[0].id}`);
+        navigate(`/users/${userId}/events/${response.data[0].id}`);
       })
       .catch((error) => console.error(error));
   };
 
-  
+  function getParticipants() {
+    supabase
+      .from("users")
+      .select()
+      .then((response) => {
+        console.log(response.data);
+        setParticipants(response.data);
+      })
+      .catch((error) => console.error(error));
+  }
 
-  
 
   return (
     <section className="create-event-section">
@@ -63,19 +71,9 @@ function CreateEvent() {
           type="date"
         />
         <label htmlFor="participantSearch"> Who is coming?</label>
-        <input
-          id="participant.Search"
-          value={searchParticpants}
-          onChange={(event) => {
-            const query = event.target.value
-            setSearchPartipants(query);
-            searchForParticpants(query)
-            console.log(event.target.value);
-          }}
-          type="text"
-        />
+        <SearchUsers getParticipants={getParticipants} setParticipants={setParticipants} />
            <div className="participants-search">
-          {participants.map((participant) => (
+          {participants?.map((participant) => (
             <div key={participant.id}>
               <input
                 type="checkbox"
@@ -88,8 +86,7 @@ function CreateEvent() {
           ))}        
         </div>
         <label>
-          If you could not find them or they have not joined you can just share
-          the event with them via Whatsapp
+          You can also share the event with friends via Whatsapp
         </label>
         <label> What is your event about?</label>
         <textarea
