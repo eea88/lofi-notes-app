@@ -7,19 +7,18 @@ import { useEffect } from "react";
 import TaskForm from "../components/TaskForm";
 import WarningTask from "../components/WarningTask";
 
-
-
 function EventDetails() {
   const { eventId } = useParams();
   const [event, setEvent] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
+  const [isTaskEditing,setIsTaskEditing] = useState(false);
+  const [taskToEdit, setTaskToEdit] = useState()
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [displayForm, setDisplayForm] = useState(false);
   const [task, setTask] = useState([]);
   const [showTaskWarning, setShowTaskWarning] = useState(false);
   const [taskIdToDelete, setTaskIdToDelete] = useState(null);
-
 
   function getEvent() {
     supabase
@@ -38,6 +37,17 @@ function EventDetails() {
       .then((response) => setTask(response.data))
       .catch((error) => console.error(error));
   }
+
+  const handleCheckboxChange = (taskId, completed) => {
+    supabase
+      .from("tasks")
+      .update({ completed })
+      .eq("id", taskId)
+      .then(() => {
+        getTask();
+      })
+      .catch((error) => console.error(error));
+  };
 
   useEffect(() => {
     getEvent();
@@ -73,25 +83,25 @@ function EventDetails() {
     setDisplayForm(!displayForm);
   };
 
-  function deleteTask (id) {
-    
+  function deleteTask(id) {
     supabase
       .from("tasks")
       .delete()
       .eq("id", id)
       .then(
-        () => {setShowTaskWarning(false);
-          getTask() } // need to review this line of code:
+        () => {
+          setShowTaskWarning(false);
+          getTask();
+        } // need to review this line of code:
       )
       .catch((error) => console.error(error));
-  };
-  
+  }
+
   const displayTaskWarning = (id) => {
     console.log("Display Task warning");
     setShowTaskWarning(true);
     setTaskIdToDelete(id);
   };
-
 
   if (isEditing) {
     return (
@@ -125,7 +135,7 @@ function EventDetails() {
   } else {
     return (
       <ul className="event-detail-container">
-        <li className="event-card-container" >
+        <li className="event-card-container">
           <h2>{event.title}</h2>
           <p>{event.description}</p>
 
@@ -139,9 +149,21 @@ function EventDetails() {
                     ❌
                   </button>
                   <div className="check-box-container">
-                    <input type="checkbox" />
+                    <input
+                      type="checkbox"
+                      checked={eachTask.completed}
+                      onChange={(event) =>
+                        handleCheckboxChange(eachTask.id, event.target.checked)
+                      }
+                    />
                   </div>
-                  
+                  <div className="">
+                    <button onClick={() => {
+                      setIsTaskEditing(true)
+                      setDisplayForm(true)
+                        setTaskToEdit(eachTask)
+                      }} className="edit-task-button-container">Edit</button>
+                  </div>
                 </div>
               );
             })}
@@ -168,7 +190,7 @@ function EventDetails() {
           </div>
         </Link>
         {displayForm && (
-          <TaskForm getTask={getTask} handleAddTaskClick={handleAddTaskClick} />
+          <TaskForm taskToEdit={taskToEdit} setTaskToEdit={setTaskToEdit} isTaskEditing={isTaskEditing} getTask={getTask} handleAddTaskClick={handleAddTaskClick} />
         )}
       </ul>
     );
