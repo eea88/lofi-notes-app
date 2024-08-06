@@ -59,10 +59,10 @@ function UserPage() {
         {events.map((eachEvent) => {
           return (
 
-              <Link to={`/users/${userId}/events/${eachEvent.id}`}>
-            <li key={eachEvent.id} className="event-card">
+              <Link key={eachEvent.id} to={`/users/${userId}/events/${eachEvent.id}`}>
+            <li className="event-card">
               
-              <div>
+              <div >
                 <h2>{eachEvent.title}</h2>
                 <p>{eachEvent.description}</p>
                 <button onClick={() => displayWarning(eachEvent.id)}>❌</button>

@@ -99,7 +99,7 @@ function EventDetails() {
   } else {
     return (
       <ul className="event-detail-container">
-        <li className="event-card-container">
+        <li className="event-card-container" >
           <h2>{event.title}</h2>
           <p>{event.description}</p>
 
