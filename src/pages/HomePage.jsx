@@ -6,7 +6,7 @@ import stars from '../assets/stars.png'
 
 function HomePage (){
     return(
-        <section>
+        <section className="homepage">
             <img id="cloud1" src={cloud} alt="cloud" />
             <img id="cloud2" src={cloud2} alt="cloud" />
             <img id="stars" src={stars} alt="stars" />
