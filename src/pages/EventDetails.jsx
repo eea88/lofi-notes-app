@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
+import TaskForm from "../components/TaskForm";
 
 function EventDetails() {
   const { eventId } = useParams();
@@ -11,6 +12,8 @@ function EventDetails() {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [displayForm, setDisplayForm] = useState(false);
+  const [task, setTask] = useState([]);
 
   function getEvent() {
     supabase
@@ -21,8 +24,18 @@ function EventDetails() {
       .catch((error) => console.error(error));
   }
 
+  function getTask() {
+    supabase
+      .from("tasks")
+      .select()
+      .eq("event", eventId)
+      .then((response) => setTask(response.data))
+      .catch((error) => console.error(error));
+  }
+
   useEffect(() => {
     getEvent();
+    getTask();
   }, []);
 
   useEffect(() => {
@@ -48,6 +61,10 @@ function EventDetails() {
         setEvent(response.data[0]);
       })
       .catch((error) => console.error(error));
+  };
+
+  const handleAddTaskClick = () => {
+    setDisplayForm(!displayForm);
   };
 
   if (isEditing) {
@@ -87,34 +104,33 @@ function EventDetails() {
           <p>{event.description}</p>
 
           <div className="task-container">
-            <div className="task">
-              <img src="" alt="" />
-              <p>Participant: Buy Beer & cigarretes.</p>
-              <div className="check-box-container">
-                <input type="checkbox" />
-              </div>
-            </div>
-            <div className="task">
-              <img src="" alt="" />
-              <p>Participant: Buy Beer & cigarretes.</p>
-              <div className="check-box-container">
-                <input type="checkbox" />
-              </div>
-            </div>
-            <button className="add-task-button">+</button>
+            {task.map((eachTask) => {
+              return (
+                <div className="task" key={eachTask.id}>
+                  <img src="" alt="" />
+                  <p>{eachTask.text}</p>
+                  <div className="check-box-container">
+                    <input type="checkbox" />
+                  </div>
+                </div>
+              );
+            })}
+
+            <button className="add-task-button" onClick={handleAddTaskClick}>
+              +
+            </button>
           </div>
 
           <div className="edit-button-container">
             <button onClick={handleEditClick}>Edit</button>
           </div>
-          
-         
         </li>
-          <Link to="/users/:userId">
+        <Link to="/users/:userId">
           <div className="back-button-container">
             <button>Back</button>
           </div>
-          </Link>
+        </Link>
+        {displayForm && <TaskForm getTask={getTask} handleAddTaskClick={handleAddTaskClick} />}
       </ul>
     );
   }
