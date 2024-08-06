@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import TaskForm from "../components/TaskForm";
+import WarningTask from "../components/WarningTask";
+
+
 
 function EventDetails() {
   const { eventId } = useParams();
@@ -14,6 +17,9 @@ function EventDetails() {
   const [description, setDescription] = useState("");
   const [displayForm, setDisplayForm] = useState(false);
   const [task, setTask] = useState([]);
+  const [showTaskWarning, setShowTaskWarning] = useState(false);
+  const [taskIdToDelete, setTaskIdToDelete] = useState(null);
+
 
   function getEvent() {
     supabase
@@ -67,6 +73,26 @@ function EventDetails() {
     setDisplayForm(!displayForm);
   };
 
+  function deleteTask (id) {
+    
+    supabase
+      .from("tasks")
+      .delete()
+      .eq("id", id)
+      .then(
+        () => {setShowTaskWarning(false);
+          getTask() } // need to review this line of code:
+      )
+      .catch((error) => console.error(error));
+  };
+  
+  const displayTaskWarning = (id) => {
+    console.log("Display Task warning");
+    setShowTaskWarning(true);
+    setTaskIdToDelete(id);
+  };
+
+
   if (isEditing) {
     return (
       <ul className="event-detail-container">
@@ -109,12 +135,23 @@ function EventDetails() {
                 <div className="task" key={eachTask.id}>
                   <img src="" alt="" />
                   <p>{eachTask.text}</p>
+                  <button onClick={() => displayTaskWarning(eachTask.id)}>
+                    ❌
+                  </button>
                   <div className="check-box-container">
                     <input type="checkbox" />
                   </div>
+                  
                 </div>
               );
             })}
+            {showTaskWarning && (
+              <WarningTask
+                deleteTask={deleteTask}
+                taskIdToDelete={taskIdToDelete}
+                setShowTaskWarning={setShowTaskWarning}
+              />
+            )}
 
             <button className="add-task-button" onClick={handleAddTaskClick}>
               +
@@ -130,7 +167,9 @@ function EventDetails() {
             <button>Back</button>
           </div>
         </Link>
-        {displayForm && <TaskForm getTask={getTask} handleAddTaskClick={handleAddTaskClick} />}
+        {displayForm && (
+          <TaskForm getTask={getTask} handleAddTaskClick={handleAddTaskClick} />
+        )}
       </ul>
     );
   }
