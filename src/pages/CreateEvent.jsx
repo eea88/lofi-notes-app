@@ -1,24 +1,29 @@
-import './CreateEvent.css'
-import { useState } from 'react';
+import "./CreateEvent.css";
+import { useState, useEffect } from "react";
 import supabase from "../supabase/config";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+function CreateEvent() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [userId, setUserId] = useState(1);
+  const [searchParticpants, setSearchPartipants] = useState("");
+  const [participants, setParticipants] = useState([]); 
+  const navigate = useNavigate();
 
-function CreateEvent (){
-    
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [userId, setUserId] = useState(1);
-    const navigate = useNavigate();
-
-const postNewEvent = (event) => {
+  const postNewEvent = (event) => {
     event.preventDefault();
     //id, created at and user are missing
     /* setCount (count +1);
     setId (count);  */
     /* setCreatedAt(Date.now()) */
-    const newEvent = { /*id , created_at: createdAt */ title, description, user_id: userId };
+    const newEvent = {
+      /*id , created_at: createdAt */ title,
+      description,
+      user_id: userId,
+    };
     console.log(newEvent);
 
     supabase
@@ -26,15 +31,51 @@ const postNewEvent = (event) => {
       .insert(newEvent)
       .select()
       .then((response) => {
-        console.log(response.data[0].id); 
-        navigate(`./users/${userId}/events/${response.data[0].id}`)} )
+        console.log(response.data[0].id);
+        navigate(`./users/${userId}/events/${response.data[0].id}`);
+      })
       .catch((error) => console.error(error));
+  };
+
+  function SearchUsers(query) {
+    
+    return(
+    supabase
+      .from("users")
+      .select("")
+      .or(`username.ilike.${query}%`)
+      .then(({ data, error }) => {
+        if (error) {
+          console.error("Error searching for users:", error);
+          return [];
+        }
+        return data;
+      })
+    )
+  
+}
+
+  const searchForParticpants = (query) => {
+    SearchUsers(query)
+    .then((data) =>{
+      setParticipants(data);
+      console.log(query)
+    })
+    .catch((error) => console.error(error));
+    /* return (
+      <>
+        <div className="participants-search">
+          <input type="checkbox" id="Juan" name="user_name" value="Juan" />
+          <label htmlFor="Juan">Juan</label>
+        </div>
+      </>
+    ); */
   };
 
   return (
     <section className="create-event-section">
       <div className="title-create-event">
-      <h2> Let's create an Event!</h2>
+        <h2> Let's create an Event!</h2>
       </div>
       <form className="event-form" onSubmit={postNewEvent}>
         <label> What's the name of your event?</label>
@@ -44,6 +85,42 @@ const postNewEvent = (event) => {
           onChange={(event) => setTitle(event.target.value)}
           type="text"
         />
+        <label> When is your event?</label>
+        <input
+          className="form-short-input"
+          value={date}
+          onChange={(event) => setDate(event.target.value)}
+          type="date"
+        />
+        <label htmlFor="participantSearch"> Who is coming?</label>
+        <input
+          id="participant.Search"
+          value={searchParticpants}
+          onChange={(event) => {
+            const query = event.target.value
+            setSearchPartipants(query);
+            searchForParticpants(query)
+            console.log(event.target.value);
+          }}
+          type="text"
+        />
+           <div className="participants-search">
+          {participants.map((participant) => (
+            <div key={participant.id}>
+              <input
+                type="checkbox"
+                id={participant.username}
+                name="user_name"
+                value={participant.username}
+              />
+              <label htmlFor={participant.username}>{participant.username}</label>
+            </div>
+          ))}        
+        </div>
+        <label>
+          If you could not find them or they have not joined you can just share
+          the event with them via Whatsapp
+        </label>
         <label> What is your event about?</label>
         <textarea
           required
@@ -51,16 +128,14 @@ const postNewEvent = (event) => {
           onChange={(event) => setDescription(event.target.value)}
           type="text"
         />
-        
+
         <button>Submit</button>
       </form>
       <Link to="/">
-        <button>Go back</button>
+        <button className="goback-btn">Go back</button>
       </Link>
     </section>
   );
 }
 
 export default CreateEvent;
-
-

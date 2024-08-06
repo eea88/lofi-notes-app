@@ -9,7 +9,7 @@
     margin-top: 10rem;
     margin-bottom: 1rem;
     width: 100%;
-    height: 8rem;
+    height: 4rem;
     padding: 0rem;
     display: flex;
     text-align: left;
@@ -26,6 +26,7 @@
     gap: 1rem;
     justify-content: left;
     margin: 0rem;
+    /* margin-top: 2rem needs to be added to Mobile only */
     font-size: 2rem;
     margin-bottom: 5rem;
         input, textarea{
@@ -39,8 +40,11 @@
             border-color: var(--primary-bg-gradient);
             border-width: 3rem;
         }
+        .form-short-input{
+            width: 20rem;
+        }
         textarea{
-            height: 8rem;
+            height: 6rem;
             resize: none;
             padding: 0.5rem;
             margin: 0rem;
@@ -50,7 +54,7 @@
             background-color: var(--button-color);
             color: var(--text1-color);
             width: 20rem;
-            height: 5rem;
+            height: 4rem;
             padding: 0 1rem;
             border-radius: 1rem;
             transition: 300ms;
@@ -60,3 +64,22 @@
             transform: scale(1.1);
         }
     }
+    .goback-btn{
+    height: 4rem;
+}
+
+.participants-search{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 10rem;
+        input{
+            height: 2rem;
+            width: 2rem;
+        }
+        label{
+            width: 4rem;
+        }
+    
+}
