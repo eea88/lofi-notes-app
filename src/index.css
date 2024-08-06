@@ -13,7 +13,7 @@ html {
 
 
 body {
-  min-height: 100vh;
+  min-height: 100%;
   font-size: 1rem;
   background: var(--primary-bg-gradient);
    font-family:"Aldrich" , sans-serif; 
@@ -32,7 +32,7 @@ p {
 }
 
 :root {
-  min-height: 100vh;
+  min-height: 100%;
 
   --primary-color: #e3eff7;
   --primary-bg-gradient: linear-gradient(to bottom, rgb(109,114,210), rgb(114,233,233));
