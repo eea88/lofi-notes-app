@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import supabase from "../supabase/config";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import SearchUsers from "../components/SearchUsers";
 
 function CreateEvent() {
   const [title, setTitle] = useState("");
@@ -37,40 +38,9 @@ function CreateEvent() {
       .catch((error) => console.error(error));
   };
 
-  function SearchUsers(query) {
-    
-    return(
-    supabase
-      .from("users")
-      .select("")
-      .or(`username.ilike.${query}%`)
-      .then(({ data, error }) => {
-        if (error) {
-          console.error("Error searching for users:", error);
-          return [];
-        }
-        return data;
-      })
-    )
   
-}
 
-  const searchForParticpants = (query) => {
-    SearchUsers(query)
-    .then((data) =>{
-      setParticipants(data);
-      console.log(query)
-    })
-    .catch((error) => console.error(error));
-    /* return (
-      <>
-        <div className="participants-search">
-          <input type="checkbox" id="Juan" name="user_name" value="Juan" />
-          <label htmlFor="Juan">Juan</label>
-        </div>
-      </>
-    ); */
-  };
+  
 
   return (
     <section className="create-event-section">
