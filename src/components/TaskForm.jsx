@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function TaskForm({handleAddTaskClick , getTask}) {
+function TaskForm({
+  handleAddTaskClick,
+  getTask,
+  isTaskEditing,
+  taskToEdit,
+  setTaskToEdit,
+}) {
   const { eventId } = useParams();
   const [task, setTask] = useState("");
   const [text, setText] = useState("");
@@ -20,25 +26,60 @@ function TaskForm({handleAddTaskClick , getTask}) {
       .select()
       .then((response) => {
         console.log(response.data[0].id);
-        handleAddTaskClick()
-        getTask()
+        handleAddTaskClick();
+        getTask();
       })
       .catch((error) => console.error(error));
   };
 
-  return (
-    <div>
-      <form onSubmit={handleSubmission} action="">
-        <label>Task</label>
-        <input type="text" onChange={(event) => setText(event.target.value)} />
-        <div className="edit-button-container">
-          <button type="submit">Save</button>
+  const updateTask = () => {
+    supabase
+      .from("tasks")
+      .update({ text })
+      .eq("id", taskToEdit.id)
+      .then(() => {
+        getTask();
+        setTaskToEdit(null);
+        handleAddTaskClick();
+      })
+      .catch((error) => console.error(error));
+  };
 
-          <button onClick={handleAddTaskClick} type="button">Cancel</button>
-        </div>
+  if (isTaskEditing) {
+    return (
+      <form onSubmit={updateTask}>
+        <label> Task</label>
+        <input
+          value={text}
+          onChange={(event) => setText(event.target.value)}
+          type="text"
+        />
+        <button type="submit">Save</button>
+        <button onClick={handleAddTaskClick} type="button">
+          Cancel
+        </button>
       </form>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        <form onSubmit={handleSubmission} action="">
+          <label>Task</label>
+          <input
+            type="text"
+            onChange={(event) => setText(event.target.value)}
+          />
+          <div className="edit-button-container">
+            <button type="submit">Save</button>
+
+            <button onClick={handleAddTaskClick} type="button">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default TaskForm;

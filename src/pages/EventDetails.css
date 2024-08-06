@@ -182,4 +182,17 @@
     }
 }
 
+.edit-task-button-container {
+    width: 5vw;
+    height: 3vh;
+    font-family: "Aldrich";
+    border: none;
+    border-radius: 2rem;
+    background-color: #222222;
+    color: rgb(255, 255, 255);
+
+}
+   
+
+
 
