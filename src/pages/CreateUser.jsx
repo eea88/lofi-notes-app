@@ -1,5 +1,5 @@
 import './CreateUser.css'
-import { Link } from 'react-router-dom';
+import { Link, useResolvedPath } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import supabase from "../supabase/config";
 import { useNavigate } from "react-router-dom";
@@ -21,21 +21,20 @@ function CreateUser (){
         function newUser() {
             supabase.auth
                 .signUp({
-                    username,
                     email, 
                     password
                 })
-                .then(({user, error}) => {
+                .then(() => {
                     if(error) {
-                        console.error(error);
+                        console.log(error);
+                        
                     } else {
-                        setUser(user)
-                        return supabase
+                        supabase
                             .from('users')
-                            .insert([{username, email: user.email, password: user.password}])
-                            .catch((err) => console.error(err))
+                            .insert({username: username})
                     }
                 })
+                .then(navigate("/"))
                 .catch((err) => console.error(err)
                 )
                 .finally(() => {setIsSubmitting(false)})
