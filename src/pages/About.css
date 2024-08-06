@@ -1,11 +1,12 @@
 .about {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    margin-top: 15rem;
 }
 
 .dev-container {
@@ -16,7 +17,7 @@
     align-items: center;
 }
 
-.dev-container img {
+.dev-picture {
     width: 20rem;
     height: 100%;
     background-color: pink;
@@ -37,4 +38,19 @@
     justify-content: center;
     color: var(--text1-color);
     background-image: var(--secondary-bg-gradient);
+    gap: 1rem;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.github {
+    width: 6rem;
+}
+
+.linkedin {
+    width: 4rem;
 }

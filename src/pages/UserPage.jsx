@@ -11,6 +11,7 @@ function UserPage() {
   const [showWarning, setShowWarning] = useState(false);
   const [idToDelete, setIdToDelete] = useState(null);
   const { userId } = useParams();
+ 
 
   function getEvents() {
     supabase
@@ -57,13 +58,17 @@ function UserPage() {
       <ul className="events-container">
         {events.map((eachEvent) => {
           return (
-            <li key={eachEvent.id} className="event-card">
-              <div>
+
+              <Link key={eachEvent.id} to={`/users/${userId}/events/${eachEvent.id}`}>
+            <li className="event-card">
+              
+              <div >
                 <h2>{eachEvent.title}</h2>
                 <p>{eachEvent.description}</p>
                 <button onClick={() => displayWarning(eachEvent.id)}>❌</button>
               </div>
             </li>
+              </Link>
           );
         })}
       </ul>
