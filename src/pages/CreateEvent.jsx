@@ -10,7 +10,7 @@ function CreateEvent() {
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
   const [userId, setUserId] = useState(1);
-  const [searchParticpants, setSearchPartipants] = useState("");
+  const [guests, setGuests] = useState([]);
   const [participants, setParticipants] = useState([]); 
   const navigate = useNavigate();
 
@@ -24,6 +24,8 @@ function CreateEvent() {
       /*id , created_at: createdAt */ title,
       description,
       user_id: userId,
+      date,
+      participants: guests,
     };
     console.log(newEvent);
 
@@ -37,6 +39,20 @@ function CreateEvent() {
       })
       .catch((error) => console.error(error));
   };
+
+  function handleGuests(event,participant){
+    const newGuests = structuredClone(guests)
+    if(event.target.checked){
+      
+      newGuests.push(participant.username)
+      setGuests(newGuests)
+  }else{
+    const index = newGuests.indexOf(participant.username)
+    newGuests.splice(index,1)
+      setGuests(newGuests)
+  }
+  }
+  
 
   function getParticipants() {
     supabase
@@ -80,6 +96,8 @@ function CreateEvent() {
                 id={participant.username}
                 name="user_name"
                 value={participant.username}
+                checked={guests.includes(participant.username)}
+                onChange={(event)=>handleGuests(event, participant)}
               />
               <label htmlFor={participant.username}>{participant.username}</label>
             </div>
