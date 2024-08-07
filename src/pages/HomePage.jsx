@@ -57,8 +57,8 @@ function HomePage() {
             <img id="stars" src={stars} alt="stars" />
             <div className="welcome">
                 <h2>Welcome to</h2>
-                <h1>Lofi Notes</h1>
-                <p>An app to create, edit and share notes, events, tasks and more!</p>
+                <h1>Lofi Plans</h1>
+                <p>An app to organise events and create tasks with your friends and family!</p>
             </div>
 
             <form onSubmit={handleLogin}>
