@@ -49,6 +49,7 @@ function CreateUser() {
 
     return (
         <div className="create-user-page">
+            <div className="form-container">
             <form onSubmit={createNewUser} className="create-user-form">
                 <h1>Create User</h1>
                 <label>
@@ -65,9 +66,11 @@ function CreateUser() {
                 </label>
                 <button type="submit" className="create-user-btn">Sign up</button>
             </form>
-            <Link to="/" className="return-btn">
-                <button></button>
+            </div>
+            <div className="return-container">
+            <Link to="/">
             </Link>
+            </div>
         </div>
     )
 }
