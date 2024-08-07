@@ -14,7 +14,7 @@ function TaskForm({
 }) {
   const { eventId } = useParams();
   const [task, setTask] = useState("");
-  const [text, setText] = useState("");
+  const [text, setText] = useState(taskToEdit.text);
 
   const handleSubmission = (event) => {
     const newTask = { text, completed: false, event: eventId };
@@ -47,30 +47,35 @@ function TaskForm({
 
   if (isTaskEditing) {
     return (
-      <form onSubmit={updateTask}>
+      <div className="create-task-layout">
+      <form className="create-task-form" onSubmit={updateTask}>
         <label> Task</label>
-        <input
+        <textarea
           required
           value={text}
           onChange={(event) => setText(event.target.value)}
           type="text"
         />
+        <div className="edit-button-container">
         <button type="submit">Save</button>
         <button onClick={handleAddTaskClick} type="button">
           Cancel
         </button>
+        </div>
       </form>
+      </div>
     );
   } else {
     return (
-      <div>
-        <form onSubmit={handleSubmission} action="">
+      <div className="create-task-layout">
+        <form className="create-task-form" onSubmit={handleSubmission} action="">
           <label>Task</label>
-          <input
+          <textarea
+            required
             type="text"
             onChange={(event) => setText(event.target.value)}
           />
-          <div className="edit-button-container">
+          <div  className="edit-button-container no-margin">
             <button type="submit">Save</button>
 
             <button onClick={handleAddTaskClick} type="button">

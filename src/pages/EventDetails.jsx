@@ -161,21 +161,25 @@ function EventDetails() {
                     <button onClick={() => {
                       setIsTaskEditing(true)
                       setDisplayForm(true)
-                        setTaskToEdit(eachTask)
-                      }} className="edit-task-button-container">Edit</button>
+                      setTaskToEdit(eachTask)
+                    }} className="edit-task-button-container">Edit</button>
                   </div>
                 </div>
               );
             })}
             {showTaskWarning && (
               <WarningTask
-                deleteTask={deleteTask}
-                taskIdToDelete={taskIdToDelete}
-                setShowTaskWarning={setShowTaskWarning}
+              deleteTask={deleteTask}
+              taskIdToDelete={taskIdToDelete}
+              setShowTaskWarning={setShowTaskWarning}
               />
             )}
 
-            <button className="add-task-button" onClick={handleAddTaskClick}>
+            <button className="add-task-button" onClick={()=>{
+              handleAddTaskClick()
+              setIsTaskEditing(false)
+              setTaskToEdit({})
+              }}>
               +
             </button>
           </div>
