@@ -12,6 +12,7 @@ function CreateUser() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
+
     const createNewUser = (event) => {
         event.preventDefault();
 
