@@ -9,6 +9,10 @@ import WarningTask from "../components/WarningTask";
 import SearchUsers from "../components/SearchUsers";
 
 function EventDetails() {
+  /* const session = JSON.parse(localStorage.getItem("sb-adznapocnpiuvpjbargm-auth-token"))
+
+  const userId = session.user.id */
+  const { userId } = useParams();
   const { eventId } = useParams();
   const [event, setEvent] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -280,7 +284,7 @@ function EventDetails() {
             setShowTaskWarning={setShowTaskWarning}
           />
         )}
-        <Link to="/users/:userId">
+        <Link to={`/users/${userId}`}>
           <div className="back-button-container">
             <button>Back</button>
           </div>
