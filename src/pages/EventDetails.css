@@ -13,7 +13,7 @@
 .event-card-container {
     
     width: 80vw ;
-    
+    position: relative;
     padding-left: 20px;
     padding-top: 20px;
     background: var(--secondary-bg-gradient);
@@ -34,10 +34,25 @@
         line-height: 4rem;
         padding: 10px;
     }
-
-
-    
-
+}
+.event-date{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 2rem;
+    padding: 0px;
+    margin: 10px;
+}
+.participants-container{
+    margin-left: 0.5rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.event-participants{
+    margin-left: 0.5rem;
+    font-size: 2rem;
 }
 
 .edit-button-container {
@@ -46,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 1rem;
 
   
 
@@ -194,6 +209,8 @@
 
 }
    
+
+
 
 
 

@@ -137,9 +137,20 @@ function EventDetails() {
     return (
       <ul className="event-detail-container">
         <li className="event-card-container">
-          <h2>{event.title}</h2>
+          <h2>{event.title} </h2> 
+          <span className="event-date">{event.date}</span>
+          <div className="participants-container" >
+          { event.participants?.map((eachparticipant) =>{
+            return(
+            <span key={eachparticipant} className="event-participants">{eachparticipant}</span>
+            )}
+            )
+          }
+          </div>
           <p>{event.description}</p>
-
+          <div className="edit-button-container">
+            <button onClick={handleEditClick}>Edit</button>
+          </div>
           <div className="task-container">
             {task.map((eachTask) => {
               return (
@@ -185,9 +196,7 @@ function EventDetails() {
             </button>
           </div>
 
-          <div className="edit-button-container">
-            <button onClick={handleEditClick}>Edit</button>
-          </div>
+          
         </li>
         <Link to="/users/:userId">
           <div className="back-button-container">
