@@ -75,8 +75,8 @@ function EventDetails() {
       .eq("id", eventId)
       .then((response) => {
         setIsEditing(false);
-        setEvent(response.data[0]);
       })
+      .then(()=>getEvent())
       .catch((error) => console.error(error));
   };
 
@@ -179,13 +179,7 @@ function EventDetails() {
                 </div>
               );
             })}
-            {showTaskWarning && (
-              <WarningTask
-              deleteTask={deleteTask}
-              taskIdToDelete={taskIdToDelete}
-              setShowTaskWarning={setShowTaskWarning}
-              />
-            )}
+            
 
             <button className="add-task-button" onClick={()=>{
               handleAddTaskClick()
@@ -198,6 +192,13 @@ function EventDetails() {
 
           
         </li>
+        {showTaskWarning && (
+              <WarningTask
+              deleteTask={deleteTask}
+              taskIdToDelete={taskIdToDelete}
+              setShowTaskWarning={setShowTaskWarning}
+              />
+            )}
         <Link to="/users/:userId">
           <div className="back-button-container">
             <button>Back</button>

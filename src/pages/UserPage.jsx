@@ -65,6 +65,7 @@ function UserPage() {
 <button onClick={() => displayWarning(id)}>🗑️</button> */
 
   return (
+    <>
     <section className="user-page-section">
       <div className="create-event-container">
         <Link to={`/users/${userId}/events/create`}>
@@ -100,14 +101,16 @@ function UserPage() {
         })}
       </ul>
 
-      {showWarning && (
-        <WarningEvent
-          deleteEvent={deleteEvent}
-          idToDelete={idToDelete}
-          setShowWarning={setShowWarning}
-        />
-      )}
+      
     </section>
+    {showWarning && (
+      <WarningEvent
+        deleteEvent={deleteEvent}
+        idToDelete={idToDelete}
+        setShowWarning={setShowWarning}
+      />
+    )}
+    </>
   );
 }
 
