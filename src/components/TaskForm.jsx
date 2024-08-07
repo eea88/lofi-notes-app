@@ -50,6 +50,7 @@ function TaskForm({
       <form onSubmit={updateTask}>
         <label> Task</label>
         <input
+          required
           value={text}
           onChange={(event) => setText(event.target.value)}
           type="text"
