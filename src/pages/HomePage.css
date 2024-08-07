@@ -56,7 +56,8 @@
     font-size: 2rem;
     margin: 2rem 0;
     background-color: rgb(195,119,185);
-    background-image: url(../assets/frame3.png);
+    border: 5rem solid;
+    border-image: url(../assets/frame3.png) 30 stretch;
     background-repeat: no-repeat;
     background-size: contain;
     gap: 2rem;
@@ -105,10 +106,10 @@
 }
 
 #cloud1 {
-    width: 60rem;
+    width: 45rem;
     position: absolute;
     top: 10%;
-    left: -30%;
+    left: 0;
     z-index: 2;
 }
 #cloud2 {
