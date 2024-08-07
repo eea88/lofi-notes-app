@@ -85,7 +85,7 @@ function UserPage() {
                   <div>
                     <h2>{eachEvent.title}</h2>
                     <h3>{eachEvent.date}</h3>
-                    <h3>{eachEvent.participants}</h3>
+                    <h3 className="participants">{eachEvent.participants}</h3>
                     {/* <p>{eachEvent.description}</p> */}
                   </div>
                 </li>
