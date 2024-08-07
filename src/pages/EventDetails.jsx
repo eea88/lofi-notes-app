@@ -6,17 +6,21 @@ import { useState } from "react";
 import { useEffect } from "react";
 import TaskForm from "../components/TaskForm";
 import WarningTask from "../components/WarningTask";
+import SearchUsers from "../components/SearchUsers";
 
 function EventDetails() {
   const { eventId } = useParams();
   const [event, setEvent] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
-  const [isTaskEditing,setIsTaskEditing] = useState(false);
-  const [taskToEdit, setTaskToEdit] = useState()
+  const [isTaskEditing, setIsTaskEditing] = useState(false);
+  const [taskToEdit, setTaskToEdit] = useState();
   const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [guests, setGuests] = useState([]);
   const [description, setDescription] = useState("");
   const [displayForm, setDisplayForm] = useState(false);
   const [task, setTask] = useState([]);
+  const [participants, setParticipants] = useState([]);
   const [showTaskWarning, setShowTaskWarning] = useState(false);
   const [taskIdToDelete, setTaskIdToDelete] = useState(null);
 
@@ -57,8 +61,24 @@ function EventDetails() {
 
   useEffect(() => {
     setTitle(event.title);
+    setDate(event.date);
+    getParticipants()
+    intializeGuests(event.participants)
     setDescription(event.description);
   }, [event]);
+
+  function intializeGuests(participants) {
+    console.log("PARTICIPANTS ");
+    
+    if(participants){
+      const newGuests = participants.map((participant) => {
+        return participant;
+      });
+      setGuests(newGuests);
+      console.log(newGuests);
+      
+    }
+  }
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -71,12 +91,12 @@ function EventDetails() {
     event.preventDefault();
     supabase
       .from("events")
-      .update({ title, description })
+      .update({ title, description, date, participants: guests })
       .eq("id", eventId)
       .then((response) => {
         setIsEditing(false);
       })
-      .then(()=>getEvent())
+      .then(() => getEvent())
       .catch((error) => console.error(error));
   };
 
@@ -104,6 +124,29 @@ function EventDetails() {
     setTaskIdToDelete(id);
   };
 
+  function handleGuests(event, participant) {
+    const newGuests = structuredClone(guests);
+    if (event.target.checked) {
+      newGuests.push(participant.username);
+      setGuests(newGuests);
+    } else {
+      const index = newGuests.indexOf(participant.username);
+      newGuests.splice(index, 1);
+      setGuests(newGuests);
+    }
+  }
+
+  function getParticipants() {
+    supabase
+      .from("users")
+      .select()
+      .then((response) => {
+        console.log(response.data);
+        setParticipants(response.data);
+      })
+      .catch((error) => console.error(error));
+  }
+
   if (isEditing) {
     return (
       <ul className="event-detail-container">
@@ -116,6 +159,38 @@ function EventDetails() {
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
               />
+              <label> When is your event?</label>
+              <input
+                className="form-short-input"
+                value={date}
+                onChange={(event) => setDate(event.target.value)}
+                type="date"
+              />
+              <label htmlFor="participantSearch"> Who is coming?</label>
+              <SearchUsers
+                getParticipants={getParticipants}
+                setParticipants={setParticipants}
+              />
+              <div className="participants-search">
+                {participants?.map((participant) => (
+                  <div key={participant.id}>
+                    <input
+                      type="checkbox"
+                      id={guests.username}
+                      name="user_name"
+                      value={guests.username}
+                      checked={guests.includes(participant.username)}
+                      onChange={(event) => handleGuests(event, participant)}
+                    />
+                    <label htmlFor={participant.username}>
+                      {participant.username}
+                    </label>
+                  </div>
+                ))}
+              </div>
+              {/* <label>
+                You can also share the event with friends via Whatsapp
+              </label> */}
               <label className="text-inputs">Description</label>
               <textarea
                 type="text"
@@ -137,15 +212,16 @@ function EventDetails() {
     return (
       <ul className="event-detail-container">
         <li className="event-card-container">
-          <h2>{event.title} </h2> 
+          <h2>{event.title} </h2>
           <span className="event-date">{event.date}</span>
-          <div className="participants-container" >
-          { event.participants?.map((eachparticipant) =>{
-            return(
-            <span key={eachparticipant} className="event-participants">{eachparticipant}</span>
-            )}
-            )
-          }
+          <div className="participants-container">
+            {event.participants?.map((eachparticipant) => {
+              return (
+                <span key={eachparticipant} className="event-participants">
+                  {eachparticipant}
+                </span>
+              );
+            })}
           </div>
           <p>{event.description}</p>
           <div className="edit-button-container">
@@ -170,42 +246,53 @@ function EventDetails() {
                     />
                   </div>
                   <div className="">
-                    <button onClick={() => {
-                      setIsTaskEditing(true)
-                      setDisplayForm(true)
-                      setTaskToEdit(eachTask)
-                    }} className="edit-task-button-container">Edit</button>
+                    <button
+                      onClick={() => {
+                        setIsTaskEditing(true);
+                        setDisplayForm(true);
+                        setTaskToEdit(eachTask);
+                      }}
+                      className="edit-task-button-container"
+                    >
+                      Edit
+                    </button>
                   </div>
                 </div>
               );
             })}
-            
 
-            <button className="add-task-button" onClick={()=>{
-              handleAddTaskClick()
-              setIsTaskEditing(false)
-              setTaskToEdit({})
-              }}>
+            <button
+              className="add-task-button"
+              onClick={() => {
+                handleAddTaskClick();
+                setIsTaskEditing(false);
+                setTaskToEdit({});
+              }}
+            >
               +
             </button>
           </div>
-
-          
         </li>
         {showTaskWarning && (
-              <WarningTask
-              deleteTask={deleteTask}
-              taskIdToDelete={taskIdToDelete}
-              setShowTaskWarning={setShowTaskWarning}
-              />
-            )}
+          <WarningTask
+            deleteTask={deleteTask}
+            taskIdToDelete={taskIdToDelete}
+            setShowTaskWarning={setShowTaskWarning}
+          />
+        )}
         <Link to="/users/:userId">
           <div className="back-button-container">
             <button>Back</button>
           </div>
         </Link>
         {displayForm && (
-          <TaskForm taskToEdit={taskToEdit} setTaskToEdit={setTaskToEdit} isTaskEditing={isTaskEditing} getTask={getTask} handleAddTaskClick={handleAddTaskClick} />
+          <TaskForm
+            taskToEdit={taskToEdit}
+            setTaskToEdit={setTaskToEdit}
+            isTaskEditing={isTaskEditing}
+            getTask={getTask}
+            handleAddTaskClick={handleAddTaskClick}
+          />
         )}
       </ul>
     );
