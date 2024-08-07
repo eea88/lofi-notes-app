@@ -50,7 +50,7 @@ function CreateUser() {
 
     return (
         <div className="create-user-page">
-            <div className="form-container">
+            <div className="create-form-container">
             <form onSubmit={createNewUser} className="create-user-form">
                 <h1>Create User</h1>
                 <label>

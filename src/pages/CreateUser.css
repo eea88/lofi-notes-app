@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.form-container {
+.create-form-container {
     width: 80%;
     height: 69rem;
     background-image: url(../assets/frame4.1.png), var(--secondary-bg-gradient);
