@@ -34,6 +34,7 @@ function EventDetails() {
       .from("tasks")
       .select()
       .eq("event", eventId)
+      .order("completed", { ascending: true })
       .then((response) => setTask(response.data))
       .catch((error) => console.error(error));
   }
