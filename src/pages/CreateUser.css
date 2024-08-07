@@ -6,6 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    
 }
 
 .create-form-container {
@@ -18,6 +20,7 @@
     justify-content: center;
     align-items: center;
     padding: 0;
+    
 }
 
 .create-user-form {

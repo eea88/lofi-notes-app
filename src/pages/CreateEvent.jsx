@@ -105,8 +105,8 @@ function CreateEvent() {
             </div>
           ))}        
         </div>
-        <label>
-          You can also share the event with friends via Whatsapp
+        <label className="whatsAppText">
+          You can also share the event with friends via Whatsapp.
         </label>
         <label> What is your event about?</label>
         <textarea
