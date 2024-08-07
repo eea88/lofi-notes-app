@@ -78,7 +78,7 @@ function HomePage() {
                         <button>SIGN UP</button>
                     </Link>
                 </div>
-                <Link to="/users/1">
+                <Link to="/users/1d028fa6-9427-4036-bf9d-c8b573d552d7">
                     <button className="guest-btn">CREATE AS GUEST</button>
                 </Link>
             </form>
