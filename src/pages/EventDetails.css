@@ -167,36 +167,37 @@
 .task {
     width: 60vw;
     height: 20rem;
-    border: solid white 1px;
     background-color: white;
     margin: 20px 0;
-    border-radius: 15px;
     color: #222222;
-    -webkit-box-shadow: 10px 10px 46px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 10px 10px 46px 0px rgba(0,0,0,0.66);
-    box-shadow: 10px 10px 46px 0px rgba(0,0,0,0.66);
+    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.66);
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.66);
     font-size: 1rem;
     overflow: scroll;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    
-
+    border: 1rem solid;
+    border-image: url(../assets/task-box.png) 3 stretch;
+    border-radius: 1rem;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    position: relative;
 }
 
 .check-box-container{
 
     
-    width: 50vw;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    align-items: center;
     
 
     
 
-}
+} 
 
 
 
@@ -238,18 +239,47 @@
 }
 
 .edit-task-button-container {
-    width: 5vw;
+    width: 6rem;
     height: 3vh;
     font-family: "Aldrich";
     border: none;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background-color: #222222;
     color: rgb(255, 255, 255);
 
 }
    
 
+.task-delete-btn {
+    border: none; 
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+        width: 3rem;
+        height: 3.5rem;
+    }
+}
 
 
 
+.task-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
 
+.checkbox {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 8rem;
+}

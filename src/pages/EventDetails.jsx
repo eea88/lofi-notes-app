@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import TaskForm from "../components/TaskForm";
 import WarningTask from "../components/WarningTask";
 import SearchUsers from "../components/SearchUsers";
+import trashcanIcon from "../assets/trashcan-icon.png"
 
 function EventDetails() {
   /* const session = JSON.parse(localStorage.getItem("sb-adznapocnpiuvpjbargm-auth-token"))
@@ -237,29 +238,31 @@ function EventDetails() {
                 <div className="task" key={eachTask.id}>
                   <img src="" alt="" />
                   <p>{eachTask.text}</p>
-                  <button onClick={() => displayTaskWarning(eachTask.id)}>
-                    ❌
-                  </button>
-                  <div className="check-box-container">
-                    <input
-                      type="checkbox"
-                      checked={eachTask.completed}
-                      onChange={(event) =>
-                        handleCheckboxChange(eachTask.id, event.target.checked)
-                      }
-                    />
-                  </div>
-                  <div className="">
-                    <button
-                      onClick={() => {
-                        setIsTaskEditing(true);
-                        setDisplayForm(true);
-                        setTaskToEdit(eachTask);
-                      }}
-                      className="edit-task-button-container"
-                    >
-                      Edit
+                  <div className="task-btn-container">
+                    <div className="">
+                      <button
+                        onClick={() => {
+                          setIsTaskEditing(true);
+                          setDisplayForm(true);
+                          setTaskToEdit(eachTask);
+                        }}
+                        className="edit-task-button-container"
+                      >
+                        Edit
+                      </button>
+                    </div>
+                    <button className="task-delete-btn" onClick={() => displayTaskWarning(eachTask.id)}>
+                      <img src={trashcanIcon} alt="delete button" />
                     </button>
+                    <div className="check-box-container">
+                      <input className="checkbox"
+                        type="checkbox"
+                        checked={eachTask.completed}
+                        onChange={(event) =>
+                          handleCheckboxChange(eachTask.id, event.target.checked)
+                        }
+                      />
+                    </div>
                   </div>
                 </div>
               );
