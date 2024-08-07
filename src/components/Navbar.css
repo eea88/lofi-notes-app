@@ -20,7 +20,7 @@ nav a {
     padding: 0 4rem;
 }
 
-.user-icon {
+.dev-icon {
     background-color: white;
     width: 6rem;
     height: 6rem;
@@ -28,4 +28,36 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: dev-rotation 8000ms infinite
+}
+
+@keyframes dev-rotation {
+
+    0% {
+        background-color: white;
+    }
+
+    14% {
+        background-color: pink;
+    }
+    
+    28% {
+        background-color: white;
+    }
+
+    42% {
+        background-color: aqua;
+    }
+
+    56% {
+        background-color: white;
+    }
+
+    70% {
+        background-color: greenyellow;
+    }
+
+    100% {
+        background-color: white;
+    }
 }

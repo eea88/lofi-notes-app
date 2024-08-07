@@ -7,8 +7,8 @@ function Navbar() {
             <Link to="/">
                 <h1>Lofi Notes</h1>
             </Link>
-            <Link to="/users/:userId">
-                <div className="user-icon">
+            <Link to="/about">
+                <div className="dev-icon">
                     <img src="" alt="" />
                 </div>
             </Link>
