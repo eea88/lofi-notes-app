@@ -25,14 +25,22 @@ function UserPage() {
   }, []);
 
   function deleteEvent(id) {
-    //console.log("Attempting to delete event with ID:", id); // Debugging log
+    // First, delete all the tasks that reference the event
     supabase
-      .from("events")
+      .from("tasks")
       .delete()
-      .eq("id", id)
+      .eq("event", id)
       .then(() => {
-        setShowWarning(false);
-        getEvents();
+        // Once the tasks have been deleted, delete the event
+        supabase
+          .from("events")
+          .delete()
+          .eq("id", id)
+          .then(() => {
+            setShowWarning(false);
+            getEvents();
+          })
+          .catch((error) => console.error(error));
       })
       .catch((error) => console.error(error));
   }
