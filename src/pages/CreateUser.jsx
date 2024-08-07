@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import supabase from "../supabase/config";
 import { useNavigate } from "react-router-dom";
+import base1 from '../assets/base1.png'
+import cloud from '../assets/cloud.png'
+import cloud2 from '../assets/cloud2.png'
 
 function CreateUser() {
     const [user, setUser] = useState(null)
@@ -72,6 +75,10 @@ function CreateUser() {
             <Link to="/">
             </Link>
             </div>
+            <img id="create-cloud1" src={cloud} alt="cloud" />
+            <img id="create-cloud3" src={cloud} alt="cloud" />
+            <img id="create-cloud2" src={cloud2} alt="cloud" />
+            <img id="cat-base" src={base1} alt="cat base" />
         </div>
     )
 }
