@@ -92,7 +92,7 @@
     image-rendering: crisp-edges;
 
     transform: translateX(-50%) translateY(-50%);
-    
+    z-index: 4;
 }
 
 #cat-base {
