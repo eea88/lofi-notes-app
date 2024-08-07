@@ -7,25 +7,27 @@ import supabase from '../supabase/config';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function HomePage (){
+function HomePage() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const getSession = async() => {
+    const getSession = async () => {
         try {
-            const session = await supabase.auth.getSession()
+            const session = JSON.parse(localStorage.getItem("sb-adznapocnpiuvpjbargm-auth-token"))
+            console.log(session.expires_at);
 
-            if(session.data.session.expores_at > Date.now() / 1000) {
+
+            if (session.expires_at > Date.now() / 1000) {
                 console.log("Logged in");
             } else {
                 console.log("Not logged in");
-                                        
+
             }
         } catch (error) {
             console.log("Not logged in", error);
-            
+
         }
 
     }
@@ -48,7 +50,7 @@ function HomePage (){
             .catch((err) => console.error(err))
     }
 
-    return(
+    return (
         <section className="homepage">
             <img id="cloud1" src={cloud} alt="cloud" />
             <img id="cloud2" src={cloud2} alt="cloud" />
@@ -63,11 +65,11 @@ function HomePage (){
                 <div className="user-login">
                     <label>
                         Email
-                        <input type="email" value={email} onChange={(event) => setEmail(event.target.value)}/>
+                        <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
                     </label>
                     <label>
                         Password
-                        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
+                        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
                     </label>
                 </div>
                 <div className="homepage-btn">
@@ -76,9 +78,9 @@ function HomePage (){
                         <button>SIGN UP</button>
                     </Link>
                 </div>
-                    <Link to="/users/1">
-                        <button className="guest-btn">CREATE AS GUEST</button>
-                    </Link>
+                <Link to="/users/1">
+                    <button className="guest-btn">CREATE AS GUEST</button>
+                </Link>
             </form>
         </section>
     )
