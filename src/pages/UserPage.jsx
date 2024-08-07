@@ -16,8 +16,18 @@ function UserPage() {
     supabase
       .from("events")
       .select()
-      .then((response) => setEvents(response.data))
-      .catch((error) => console.error(error));
+      .eq("user_id", userId)
+      .then((response) =>{ 
+        console.log(response);
+        if (response.data) {
+          
+          setEvents(response.data)}
+        }
+      )
+        
+      .catch((error) => {
+        console.error(error)
+      });
   }
 
   useEffect(() => {
@@ -32,11 +42,15 @@ function UserPage() {
       .eq("event", id)
       .then(() => {
         // Once the tasks have been deleted, delete the event
-        return supabase.from("events").delete().eq("id", id);
-      })
-      .then(() => {
-        setShowWarning(false);
-        getEvents();
+        supabase
+          .from("events")
+          .delete()
+          .eq("id", id)
+          .then(() => {
+            setShowWarning(false);
+            getEvents();
+          })
+          .catch((error) => console.error(error));
       })
       .catch((error) => console.error(error));
   }
@@ -62,7 +76,10 @@ function UserPage() {
         {events.map((eachEvent) => {
           return (
             <div className="event-relative" key={eachEvent.id}>
-              <Link to={`/users/${userId}/events/${eachEvent.id}`}>
+              <Link
+                
+                to={`/users/${userId}/events/${eachEvent.id}`}
+              >
                 <li className="event-card">
                   <div>
                     <h2>{eachEvent.title}</h2>

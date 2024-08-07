@@ -4,15 +4,17 @@ import supabase from "../supabase/config";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchUsers from "../components/SearchUsers";
+import { useParams } from 'react-router-dom';
 
 function CreateEvent() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
-  const [userId, setUserId] = useState(1);
+  /* const [userId, setUserId] = useState(1); */
   const [guests, setGuests] = useState([]);
   const [participants, setParticipants] = useState([]); 
   const navigate = useNavigate();
+  const {userId} = useParams()
 
   const postNewEvent = (event) => {
     event.preventDefault();
