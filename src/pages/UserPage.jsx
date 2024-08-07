@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function UserPage() {
+  
   const [events, setEvents] = useState([]);
   const [showWarning, setShowWarning] = useState(false);
   const [idToDelete, setIdToDelete] = useState(null);
@@ -85,7 +86,16 @@ function UserPage() {
                   <div>
                     <h2>{eachEvent.title}</h2>
                     <h3>{eachEvent.date}</h3>
-                    <h3 className="participants">{eachEvent.participants}</h3>
+                    <div className="user-page-participants-container">
+            {eachEvent.participants?.map((eachparticipant) => {
+              return (
+                <span key={eachparticipant} className="event-user-page-participants">
+                  {eachparticipant}
+                </span>
+              );
+            })}
+          </div>
+                    {/* <h3 className="participants">{eachEvent.participants}</h3> */}
                     {/* <p>{eachEvent.description}</p> */}
                   </div>
                 </li>
