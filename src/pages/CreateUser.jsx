@@ -23,14 +23,14 @@ function CreateUser (){
                 .signUp({
                     email, 
                     password,
-                    // data: {username: username}
+                    data: {username: username}
                 })
-                // .then(() => {
-                //     supabase
-                //         .from('users')
-                //         .insert({username: username, user_id: user.id})
+                .then((response) => {
+                    return  supabase
+                        .from('users')
+                        .insert({username: username, user_id: response.date.user.id})
                     
-                // })
+                })
                 .then(navigate("/"))
                 .catch((err) => console.error(err)
                 )
