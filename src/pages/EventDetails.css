@@ -7,7 +7,44 @@
     justify-content: flex-start;
     margin-top: 20px;
     flex-direction: column;
-    overflow:scroll ;
+        .form-container{
+            height: 50vh;
+            padding: 0;
+            gap: 5px;
+                textarea{
+                height: 80px;
+            }
+            .participants-search{
+                max-height: 20vh;
+                font-size: 1rem;
+                
+                overflow: scroll;
+            
+                    display: flex;
+                    flex-direction: column;
+                    flex-grid{
+                        display: block
+                    };
+                    align-items: baseline;
+                    justify-content: center;
+                    gap: 0rem;
+                    
+                        input{
+                            height: 2rem;
+                            width: 2rem;
+                        }
+                        label{
+                            width: 4rem;
+                        }
+                    div{
+                        margin: 0;
+                        padding: 0;
+                    }
+
+            }
+
+        }
+        
 
 }
 .event-card-container {
