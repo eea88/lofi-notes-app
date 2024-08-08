@@ -1,7 +1,7 @@
 .create-user-page {
   width: 100%;
   margin-top: 12rem;
-  height: 45rem;
+  height: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +28,7 @@
 
 .create-user-form {
   width: 90%;
-  height: 60rem;
+  height: 69rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +63,7 @@
   font-size: 5rem;
   position: absolute;
   top: 0;
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 
 .create-user-form button {
@@ -72,12 +72,15 @@
   font-size: 3rem;
   font-family: "Aldrich", sans-serif;
   border: none;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background-color: var(--text1-color);
   color: var(--text2-color);
   position: absolute;
   bottom: 0;
   margin-bottom: 5rem;
+  -webkit-box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);
+  -moz-box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);
+  box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);  
 }
 
 .create-user-page a {
@@ -85,7 +88,7 @@
   height: 6.6rem;
   position: absolute;
   bottom: 0;
-  margin-bottom: 25%;
+  margin-bottom: 15%;
   background-image: url(../assets/return-icon.png);
   background-size: cover;
   background-repeat: no-repeat;
