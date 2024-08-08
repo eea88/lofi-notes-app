@@ -71,7 +71,7 @@
   justify-content: center;
   align-items: center;
   
-  
+  width: 45rem;
   height: 87%;
   background-image: url(../assets/event-details-frame.png);
   background-size: 100% 100%;
@@ -161,7 +161,7 @@
   height: 75%;
   background-color: rgb(195, 119, 185);
   background-image: url(../assets/frame4.1.png);
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
@@ -175,13 +175,13 @@
 .form-container {
   margin-top: 2rem;
   width: 75%;
-  height: 70%;
+  height: 60%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 23px;
   input {
     
     padding: 0.5rem 1rem;
