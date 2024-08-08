@@ -156,3 +156,19 @@
         top: 40vh;
     }
 }
+@media(min-width: 750px) {
+    .homepage form{
+        margin-top: 10px;
+        max-width: 310px;
+    }
+    .user-login{
+        max-width: 350px;
+    }
+    .homepage-btn button{
+        max-width: 150px
+    }
+    .guest-btn {
+        max-width: 350px;
+    }
+
+}
