@@ -1,9 +1,12 @@
 .user-page-section {
     width: 100%;
     height: 100%;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
    
-    }
+}
     
     .create-event-container {
       
@@ -19,13 +22,16 @@
             width: 60vw;
             height: 5vh;
             border: none;
-            border-radius: 15px;
+            border-radius: 1rem;
             font-family: "Aldrich";
             font-size: 3rem;
             text-align: center;
             display: flex;
             align-items: center;
-            justify-content: center;     
+            justify-content: center; 
+            -webkit-box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);
+            -moz-box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);
+            box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);    
         }
 
         button:hover{
@@ -41,15 +47,16 @@
         width: 100vw;
         height: 100%;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        flex-direction: row;
+        /* flex-direction: column; */
         flex-wrap: wrap;
         gap: 2rem;
         margin-left: 1rem;
         margin-right: 1rem;
         z-index: 1;
         margin-bottom: 20px;
+        padding: 0 1rem;
         
         
         
@@ -58,21 +65,21 @@
 
 
     .event-card {
-        
-        background: var(--secondary-bg-gradient);
-        margin-top: 3px;
-        width: 40vw;
-        height: 15vh;
-        max-height: 40vh;
+
+        background-color: transparent;
+
+        width: 90%;
+        height: 100%;
+        max-height: 100%;
         position: relative;
         z-index: 2;
-        border-radius: 15px;
         font-family: "Aldrich";
         display: flex;
         align-items: center;
         justify-content: center;
         line-height: 2.5rem;
         text-align: center;
+        color:white;
         
 
         h2 {
@@ -99,7 +106,7 @@
     }
 
     .user-page-participants-container {
-        
+        margin-top: 1rem;
         width: 100%;
         height: 50%;
         display: flex;
@@ -108,8 +115,9 @@
         justify-content:center;
         flex-direction:row;
         flex-wrap: wrap;
-        font-size: 1.3rem;
-        
+        font-size: 1.5rem;
+        color: rgb(227, 227, 227);
+        line-height: 1rem;
         
         
     }
@@ -117,13 +125,11 @@
     
 
     .delete-button {
-        
-            border: solid rgba(0, 0, 0, 0.345) 1px;
-            border-radius: 50%;
+            border: none;
             background-color: transparent;
             position: absolute;
-            top:-11px;
-            right: -5px;
+            bottom: 4px;
+            right: -8px;
             width: 3vh;
             height: 3vh;
             padding: 0;
@@ -134,6 +140,10 @@
             align-items: center;
             justify-content: center; 
             z-index: 5;
+
+            img{
+                width: 3rem;
+            }
     }
 
     .delete-button:hover {
@@ -141,6 +151,23 @@
     }
 
     .event-relative {
+        width: 22rem;
+        height: 18rem;
         position: relative;
+        background-image: url(../assets/event-folder2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .event-relative a {
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
