@@ -9,6 +9,7 @@ import About from "./pages/About";
 import CreateUser from "./pages/CreateUser";
 import UserPage from "./pages/UserPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>
+      <Footer />
     </>
   );
 }
