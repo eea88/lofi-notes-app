@@ -29,6 +29,14 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(../assets/user-icon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    
+    
+    
 }
 
 .dev-icon {
