@@ -6,6 +6,9 @@ import WarningEvent from "../components/WarningEvent";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import trashcanIcon from "../assets/trashcan-icon.png"
+import base2 from "../assets/base2.png";
+import cloud from "../assets/cloud.png";
+import cloud2 from "../assets/cloud2.png";
 
 function UserPage() {
   
@@ -111,7 +114,11 @@ function UserPage() {
           );
         })}
       </ul>
-
+      
+      <img id="user-page-cloud1" src={cloud} alt="cloud" />
+      <img id="user-page-cloud3" src={cloud} alt="cloud" />
+      <img id="user-page-cloud2" src={cloud2} alt="cloud" />
+      <img id="cat-base" src={base2} alt="cat base" />
       
     </section>
     {showWarning && (
@@ -121,6 +128,8 @@ function UserPage() {
         setShowWarning={setShowWarning}
       />
     )}
+
+
     </>
   );
 }
