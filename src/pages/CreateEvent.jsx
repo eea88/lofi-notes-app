@@ -16,6 +16,7 @@ function CreateEvent() {
   const navigate = useNavigate();
   const {userId} = useParams()
 
+
   const postNewEvent = (event) => {
     event.preventDefault();
     //id, created at and user are missing
@@ -70,6 +71,7 @@ function CreateEvent() {
 
   return (
     <section className="create-event-section">
+      <div className="create-event-form-frame">
       <div className="title-create-event">
         <h2> Let's create an Event!</h2>
       </div>
@@ -90,7 +92,7 @@ function CreateEvent() {
         />
         <label htmlFor="participantSearch"> Who is coming?</label>
         <SearchUsers getParticipants={getParticipants} setParticipants={setParticipants} />
-           <div className="participants-search">
+          <div className="participants-search">
           {participants?.map((participant) => (
             <div key={participant.id}>
               <input
@@ -115,11 +117,12 @@ function CreateEvent() {
           onChange={(event) => setDescription(event.target.value)}
           type="text"
         />
-
+        <div className="create-event-submit-btn">
         <button>Submit</button>
+        </div>
       </form>
-      <Link to="/">
-        <button className="goback-btn">Go back</button>
+      </div>
+      <Link className="event-page-return-btn" to={`/users/${userId}`}>
       </Link>
     </section>
   );
