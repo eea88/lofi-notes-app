@@ -216,6 +216,7 @@ function EventDetails() {
   } else {
     return (
       <ul className="event-detail-container">
+        <div className="event-card-container-frame">
         <li className="event-card-container">
           <h2>{event.title} </h2>
           <span className="event-date">{event.date}</span>
@@ -230,9 +231,20 @@ function EventDetails() {
           </div>
           <p>{event.description}</p>
           <div className="edit-button-container">
-            <button onClick={handleEditClick}>Edit</button>
+            <button onClick={handleEditClick}>Edit Event</button>
           </div>
           <div className="task-container">
+            <button
+              className="add-task-button"
+              onClick={() => {
+                handleAddTaskClick();
+                setIsTaskEditing(false);
+                setTaskToEdit({});
+              }}
+            >
+              Add Task
+            </button>
+
             {task.map((eachTask) => {
               return (
                 <div className="task" key={eachTask.id}>
@@ -268,18 +280,10 @@ function EventDetails() {
               );
             })}
 
-            <button
-              className="add-task-button"
-              onClick={() => {
-                handleAddTaskClick();
-                setIsTaskEditing(false);
-                setTaskToEdit({});
-              }}
-            >
-              +
-            </button>
+
           </div>
         </li>
+        </div>
         {showTaskWarning && (
           <WarningTask
             deleteTask={deleteTask}
@@ -287,10 +291,7 @@ function EventDetails() {
             setShowTaskWarning={setShowTaskWarning}
           />
         )}
-        <Link to={`/users/${userId}`}>
-          <div className="back-button-container">
-            <button>Back</button>
-          </div>
+        <Link className="edit-event-return-btn" to={`/users/${userId}`}>
         </Link>
         {displayForm && (
           <TaskForm
