@@ -9,9 +9,8 @@
 
 .title-create-event{
     margin-top: 10rem;
-    margin-bottom: 1rem;
     width: 100%;
-    height: 4rem;
+    height: 6rem;
     padding: 0rem;
     display: flex;
     text-align: left;
@@ -23,10 +22,8 @@
            
         }
 }
-.event-form{
+.create-event-form{
     width: 80%;
-    
-
     display: flex;
     align-items: flex-start;
     flex-direction: column;
