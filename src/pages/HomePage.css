@@ -50,7 +50,7 @@
 }
 
 .user-login {
-    width: 75vw;
+    width: 280px;
     height: 26rem;
     display: flex;
     flex-direction: column;
@@ -89,8 +89,8 @@
 }
 
 .homepage-btn button {
-    width: 35vw;
-    height: 8rem;
+    width: 130px;
+    height: 65px;
     font-size: 2.5rem;
     font-family:"Aldrich" , sans-serif; 
     border: none;
@@ -131,8 +131,8 @@
 }
 
 .guest-btn {
-    width: 75vw;
-    height: 8rem;
+    width: 278px;
+    height: 65px;
     font-size: 2.5rem;
     font-family:"Aldrich" , sans-serif; 
     border: none;
