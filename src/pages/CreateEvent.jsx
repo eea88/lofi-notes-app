@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchUsers from "../components/SearchUsers";
 import { useParams } from 'react-router-dom';
+import base2 from "../assets/base2.png";
+import cloud from "../assets/cloud.png";
+import cloud2 from "../assets/cloud2.png";
 
 function CreateEvent() {
   const [title, setTitle] = useState("");
@@ -124,6 +127,12 @@ function CreateEvent() {
       </div>
       <Link className="event-page-return-btn" to={`/users/${userId}`}>
       </Link>
+
+      <img id="user-page-cloud1" src={cloud} alt="cloud" />
+      <img id="user-page-cloud3" src={cloud} alt="cloud" />
+      <img id="user-page-cloud2" src={cloud2} alt="cloud" />
+      <img id="cat-base" src={base2} alt="cat base" />
+
     </section>
   );
 }

@@ -3,7 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    background-image: url(../assets/stars.png);
+    background-size: contain;
+    color: rgb(255, 255, 255);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .create-event-form-frame {
@@ -17,6 +22,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 3rem;
+    z-index: 4;
 }
 
 .title-create-event{
@@ -121,5 +127,5 @@
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 
-    z-index: 4;
+    z-index: 7;
 }
