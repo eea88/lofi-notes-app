@@ -17,8 +17,8 @@
   width: 80%;
   height: 69rem;
   background-image: url(../assets/frame4.1.png), var(--secondary-bg-gradient);
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,8 +132,8 @@
   z-index: 2;
 }
 
-@media (min-width: 375px) {
+/* @media (min-width: 375px) {
   .create-form-container {
     background-size: cover;
   }
-}
+} */
