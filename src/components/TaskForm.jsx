@@ -49,7 +49,7 @@ function TaskForm({
     return (
       <div className="create-task-layout">
       <form className="create-task-form" onSubmit={updateTask}>
-        <label> Task</label>
+        <label>Edit Task</label>
         <textarea
           required
           value={text}
@@ -69,7 +69,7 @@ function TaskForm({
     return (
       <div className="create-task-layout">
         <form className="create-task-form" onSubmit={handleSubmission} action="">
-          <label>Task</label>
+          <label>Create a task</label>
           <textarea
             required
             type="text"
