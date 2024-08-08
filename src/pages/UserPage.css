@@ -52,8 +52,7 @@
         /* flex-direction: column; */
         flex-wrap: wrap;
         gap: 2rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        
         z-index: 1;
         margin-bottom: 20px;
         padding: 0 1rem;
