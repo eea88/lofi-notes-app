@@ -183,6 +183,7 @@
         image-rendering: pixelated;
         image-rendering: -moz-crisp-edges;
         image-rendering: crisp-edges;
+        z-index: 6;
     }
 
     #user-page-cloud1 {
@@ -191,6 +192,7 @@
         top: 15%;
         left: 0;
         z-index: 2;
+        
     }
     #user-page-cloud2 {
         width: 10rem;

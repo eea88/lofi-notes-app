@@ -8,6 +8,9 @@
     align-items: center;
     background-image: url(../assets/stars.png);
     background-size: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
     
 }
 
@@ -102,6 +105,7 @@
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    z-index: 6;
 }
 
 #create-cloud1 {
