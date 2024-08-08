@@ -6,20 +6,26 @@
   padding: 0;
   
   box-sizing: border-box;
+  overflow-x: hidden !important;
+  
 }
 html {
+  
   font-size: 8px;
+  overflow-x: hidden !important;
+  
   
 }
 
 
 body {
   width: 100vw; 
+  
   min-height: 100%;
   font-size: 1rem;
   background: var(--primary-bg-gradient);
-   font-family:"Aldrich" , sans-serif; 
-  
+   font-family:"Aldrich" , sans-serif;
+   
 }
 
 h1 {
