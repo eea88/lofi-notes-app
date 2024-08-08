@@ -22,33 +22,32 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 30rem;
+    color: white;
     animation: slide-up 800ms;
         label{
             font-size: 3rem;
         }
         textarea {
+            border: 0.5rem solid rgb(94, 98, 191);
             font-size: 2rem;
-            border-radius: 1rem;
-            width: 32rem;
+            width: 30rem;
             height: 16rem;
             padding: 1rem;
-            margin: 0rem;
-            background-color: rgb(195,119,185);
-            border: 1rem;
-            border-color: var(--secondary-bg-gradient);
-            border-width: 3rem;
+            background-color: white;
             resize: none;
         }
     button {
       margin-top: 0;
-        background-color: var(--primary-color);
-      border-radius: 3rem;
+      border-radius: 1rem;
       border: none;
-      color: var(--secondary-color);
       cursor: pointer;
       padding: 0.5rem 1rem;
       font-size: 2rem;
       width: 10rem;
+      background-color: rgb(94, 98, 191);
+      -webkit-box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
+      -moz-box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
+      box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
     }
 }
 
