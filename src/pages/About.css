@@ -8,18 +8,27 @@
     gap: 5rem;
     background-image: url(../assets/stars.png);
     background-size: contain;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
 }
 
 .dev-container {
-    width: 85%;
+    width: 100%;
     height: 20rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    
+}
+
+.all-devs {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     align-items: center;
     z-index: 4;
+    gap: 3rem;
 }
 
 .dev-picture {
@@ -31,6 +40,7 @@
 
 .about h1 {
     font-size: 3rem;
+    z-index: 4;
 }
 
 .about h2 {

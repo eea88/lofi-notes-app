@@ -5,10 +5,12 @@ import linkedIn from '../assets/linkedin-icon.png'
 import base1 from "../assets/base1.png";
 import cloud from "../assets/cloud.png";
 import cloud2 from "../assets/cloud2.png";
+import kimPic from "../assets/kim.jpg"
 
 function About(){
     return(
         <section className="about">
+            <div className="all-devs">
             <h1>Meet the developers</h1>
             <div className="dev-container">
                 <img className="dev-picture" src="" alt="" />
@@ -31,7 +33,7 @@ function About(){
                 </div>
             </div>
             <div className="dev-container">
-                <img className="dev-picture" src="" alt="" />
+                <img className="dev-picture" src={kimPic} alt="" />
                 <div className="dev-info">
                     <h2> Kim Delgado </h2>
                     <div className="socials">
@@ -44,6 +46,7 @@ function About(){
             <div className="return-container">
             <Link className="about-return-btn" to="/">
             </Link>
+            </div>
             </div>
             <img id="create-cloud1" src={cloud} alt="cloud" />
             <img id="create-cloud3" src={cloud} alt="cloud" />
