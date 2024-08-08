@@ -73,7 +73,7 @@ function CreateEvent() {
       <div className="title-create-event">
         <h2> Let's create an Event!</h2>
       </div>
-      <form className="event-form" onSubmit={postNewEvent}>
+      <form className="create-event-form" onSubmit={postNewEvent}>
         <label> What's the name of your event?</label>
         <input
           required
