@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import WarningEvent from "../components/WarningEvent";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import trashcanIcon from "../assets/trashcan-icon.png"
 
 function UserPage() {
   
@@ -104,7 +105,7 @@ function UserPage() {
                 className="delete-button"
                 onClick={() => displayWarning(eachEvent.id)}
               >
-                x
+                <img src={trashcanIcon} alt="delete event" />
               </button>
             </div>
           );
