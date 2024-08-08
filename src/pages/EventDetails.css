@@ -48,22 +48,24 @@
 
 }
 .event-card-container {
-    
-    width: 80vw ;
+    height: 90%;
+    width: 90% ;
+
     position: relative;
-    padding-left: 20px;
-    padding-top: 20px;
-    background: var(--secondary-bg-gradient);
-    border-radius: 15px;
+    padding: 10px;
+    background: rgb(195,119,185);
+    /* display: flex;
+    flex-direction: ;
+    justify-content: center;
+    align-items: center; */
+
     list-style: none;
     overflow: scroll;
-    margin-top: 10rem;
-    
-
+    color: white;
 
     h2 {
         font-size: 4rem;
-        padding: 10px;
+        padding: 20px 10px 10px 10px;
     }
 
     p {
@@ -72,6 +74,25 @@
         padding: 10px;
     }
 }
+
+.event-card-container-frame {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    width: 85vw;
+    height: 75%;
+    background-image: url(../assets/event-details-frame.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* border-image: url(../assets/event-details-frame.png) 5 stretch; */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 .event-date{
     position: absolute;
     right: 10px;
@@ -81,11 +102,12 @@
     margin: 10px;
 }
 .participants-container{
-    margin-left: 0.5rem;
     gap: 1rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    color: rgb(229, 229, 229)
 }
 .event-participants{
     margin-left: 0.5rem;
@@ -114,17 +136,20 @@
         font-size: 3rem;
     
         border: none;
-        border-radius: 2rem;
-        background-color: white;
-        color: #222222;
+        border-radius: 1rem;
+        background-color: rgb(131,121,199);
+        color: white;
+        -webkit-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
+        -moz-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
+        box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
 
     }
 }
 
 .edit-button-container {
-   
+    
     gap:10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .form-container {
@@ -156,12 +181,12 @@
 .task-container {
     width: 70vw;
    
-    border: solid white 1px;
+    border: solid white 3px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    border-radius: 15px;
+    gap: 10px;
     flex-direction: column;
+
 }
 
 .task {
@@ -189,25 +214,25 @@
 }
 
 .check-box-container{
-
-    
     display: flex;
     align-items: center;
-    
-
-    
-
 } 
 
 
 
 .add-task-button {
-    width: 3rem;
-    height: 3rem;
-    background-color: transparent;
+    margin-top: 2rem;
+    width: 20rem;
+    height: 5rem;
+    background-color: rgb(94, 98, 191);
+    -webkit-box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
+-moz-box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
+box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
     border: none;
-    font-size: 3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
     cursor: pointer;
+    color: white;
 }
 
 
@@ -244,7 +269,7 @@
     font-family: "Aldrich";
     border: none;
     border-radius: 1rem;
-    background-color: #222222;
+    background-color: rgb(109,114,210);
     color: rgb(255, 255, 255);
 
 }
@@ -282,4 +307,20 @@
     width: 2.5rem;
     height: 2.5rem;
     margin-left: 8rem;
+}
+
+.edit-event-return-btn {
+    width: 8rem;
+    height: 6.6rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15%;
+    background-image: url(../assets/return-icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+
+    z-index: 4;
 }
