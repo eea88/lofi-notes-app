@@ -156,7 +156,7 @@ function EventDetails() {
     return (
       <ul className="event-detail-container">
         <li className="event-card-container">
-          <form onSubmit={handleSubmission}>
+          <form className="edit-event-form" onSubmit={handleSubmission}>
             <div className="form-container">
               <label className="text-inputs">Title</label>
               <input
@@ -204,8 +204,8 @@ function EventDetails() {
               />
             </div>
             <div className="edit-button-container">
-              <button type="submit">Save</button>
-              <button type="button" onClick={handleCancelClick}>
+              <button className="edit-event-form-btn" type="submit">Save</button>
+              <button className="edit-event-form-btn" type="button" onClick={handleCancelClick}>
                 Cancel
               </button>
             </div>
@@ -231,7 +231,7 @@ function EventDetails() {
           </div>
           <p>{event.description}</p>
           <div className="edit-button-container">
-            <button onClick={handleEditClick}>Edit Event</button>
+            <button className="edit-event-btn" onClick={handleEditClick}>Edit Event</button>
           </div>
           <div className="task-container">
             <button
