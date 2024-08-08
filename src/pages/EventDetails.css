@@ -49,7 +49,7 @@
 }
 .event-card-container {
     height: 90%;
-    width: 90% ;
+    width: 290px;
 
     position: relative;
     padding: 10px;
@@ -76,13 +76,13 @@
 }
 
 .event-card-container-frame {
-    width: 90%;
+    
     height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10rem;
-    width: 85vw;
+    width: 320px;
     height: 75%;
     background-image: url(../assets/event-details-frame.png);
     background-size: contain;
@@ -116,7 +116,7 @@
 
 .edit-button-container {
     width: 70vw ; 
-    
+    width: 290px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,12 +127,13 @@
     button {
         font-family: "aldrich", sans-serif;
         
-        width: 8rem;
+        
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30rem;
+        width: 220px;
         height: 5rem;
+        margin-right: 35px;
         font-size: 3rem;
     
         border: none;
@@ -179,13 +180,14 @@
 
 
 .task-container {
-    width: 70vw;
-   
+    width: 257px;
     border: solid white 3px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     flex-direction: column;
+    
 
 }
 
