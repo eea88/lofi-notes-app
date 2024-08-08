@@ -8,6 +8,8 @@ import TaskForm from "../components/TaskForm";
 import WarningTask from "../components/WarningTask";
 import SearchUsers from "../components/SearchUsers";
 import trashcanIcon from "../assets/trashcan-icon.png"
+import cloud from "../assets/cloud.png";
+import cloud2 from "../assets/cloud2.png";
 
 function EventDetails() {
   /* const session = JSON.parse(localStorage.getItem("sb-adznapocnpiuvpjbargm-auth-token"))
@@ -302,6 +304,10 @@ function EventDetails() {
             handleAddTaskClick={handleAddTaskClick}
           />
         )}
+
+      <img id="user-page-cloud1" src={cloud} alt="cloud" />
+      <img id="user-page-cloud3" src={cloud} alt="cloud" />
+      <img id="user-page-cloud2" src={cloud2} alt="cloud" />
       </ul>
     );
   }

@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    background-image: url(../assets/stars.png);
+    background-size: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .dev-container {
@@ -14,6 +19,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 4;
 }
 
 .dev-picture {
@@ -47,6 +53,7 @@
 }
 
 .socials {
+    margin-top: 1rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -65,7 +72,7 @@
     height: 6.6rem;
     position: absolute;
     bottom: 0;
-    margin-bottom: 8%;
+    margin-bottom: 16%;
     background-image: url(../assets/return-icon.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -74,5 +81,5 @@
     image-rendering: crisp-edges;
 
     transform: translateX(-50%) translateY(-50%);
-    z-index: 4;
+    z-index: 7;
 }
