@@ -87,7 +87,8 @@
   width: 8rem;
   height: 6.6rem;
   position: absolute;
-  bottom: 0;
+  bottom: -0;
+
   margin-bottom: 15%;
   background-image: url(../assets/return-icon.png);
   background-size: cover;
@@ -132,8 +133,88 @@
   z-index: 2;
 }
 
-/* @media (min-width: 375px) {
-  .create-form-container {
-    background-size: cover;
-  }
-} */
+@media only screen 
+  and (device-width: 375px) 
+  and (device-height: 667px) 
+  and (-webkit-device-pixel-ratio: 2) {
+    /* Estilos específicos para iPhone SE */
+    .create-form-container {
+      width: 80%;
+      height: 89rem;
+      background-image: url(../assets/frame4.1.png), var(--secondary-bg-gradient);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      z-index: 3;
+    }
+    .create-user-form {
+      width: 90%;
+      height: 59rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--text1-color);
+      font-size: 3rem;
+      position: relative;
+      gap: 2rem;
+      /* background-image: var(--secondary-bg-gradient); */
+      z-index: 3;
+    }
+    .create-user-form label {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .create-user-form input {
+      width: 70%;
+      height: 1rem;
+      border-radius: 2rem;
+      padding: 2rem 2rem;
+    }
+    
+    .create-user-form h1 {
+      font-size: 3rem;
+      
+      
+    }
+    
+    .create-user-form button {
+      width: 20rem;
+      height: 4rem;
+      font-size: 2rem;
+      font-family: "Aldrich", sans-serif;
+      border: none;
+      border-radius: 1rem;
+      background-color: var(--text1-color);
+      color: var(--text2-color);
+      bottom:40px;
+      -webkit-box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);
+      -moz-box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);
+      box-shadow: 2px 2px 0px 2px rgb(179, 179, 179);  
+    }
+
+    .create-user-page a {
+      width: 6rem;
+      height: 5rem;
+      bottom: -20px;
+
+      background-image: url(../assets/return-icon.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      z-index: 7;
+      
+    }
+    
+
+}
