@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchUsers from "../components/SearchUsers";
 import { useParams } from 'react-router-dom';
+import base2 from "../assets/base2.png";
+import cloud from "../assets/cloud.png";
+import cloud2 from "../assets/cloud2.png";
 
 function CreateEvent() {
   const [title, setTitle] = useState("");
@@ -15,6 +18,7 @@ function CreateEvent() {
   const [participants, setParticipants] = useState([]); 
   const navigate = useNavigate();
   const {userId} = useParams()
+
 
   const postNewEvent = (event) => {
     event.preventDefault();
@@ -70,6 +74,7 @@ function CreateEvent() {
 
   return (
     <section className="create-event-section">
+      <div className="create-event-form-frame">
       <div className="title-create-event">
         <h2> Let's create an Event!</h2>
       </div>
@@ -90,7 +95,7 @@ function CreateEvent() {
         />
         <label htmlFor="participantSearch"> Who is coming?</label>
         <SearchUsers getParticipants={getParticipants} setParticipants={setParticipants} />
-           <div className="participants-search">
+          <div className="participants-search">
           {participants?.map((participant) => (
             <div key={participant.id}>
               <input
@@ -115,12 +120,19 @@ function CreateEvent() {
           onChange={(event) => setDescription(event.target.value)}
           type="text"
         />
-
+        <div className="create-event-submit-btn">
         <button>Submit</button>
+        </div>
       </form>
-      <Link to="/">
-        <button className="goback-btn">Go back</button>
+      </div>
+      <Link className="event-page-return-btn" to={`/users/${userId}`}>
       </Link>
+
+      <img id="user-page-cloud1" src={cloud} alt="cloud" />
+      <img id="user-page-cloud3" src={cloud} alt="cloud" />
+      <img id="user-page-cloud2" src={cloud2} alt="cloud" />
+      <img id="cat-base" src={base2} alt="cat base" />
+
     </section>
   );
 }
