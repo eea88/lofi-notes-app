@@ -61,7 +61,7 @@ function HomePage() {
                 <p>An app to organise events and create tasks with your friends and family!</p>
             </div>
 
-            <form onSubmit={handleLogin}>
+            <form className='user-login-container' onSubmit={handleLogin}>
                 <div className="user-login">
                     <label>
                         Email

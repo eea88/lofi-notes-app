@@ -8,6 +8,7 @@
     margin:12rem 0;
     overflow: hidden;
     
+    margin-top: 230px;
    
 }
 
@@ -47,6 +48,11 @@
 .welcome p {
     font-size: 2rem;
     /* color: rgb(47, 63, 76); */
+}
+.user-login-container {
+    
+    margin-top: 20px;
+
 }
 
 .user-login {
