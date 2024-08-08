@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 1rem;
-    position: absolute;
+    /* position: absolute; */
     top: 28vh;
     z-index: 4;
 }
