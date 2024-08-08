@@ -6,13 +6,13 @@
   padding: 0;
   
   box-sizing: border-box;
-  overflow-x: hidden !important;
+  overflow-x:hidden !important;
   
 }
 html {
   
   font-size: 8px;
-  overflow-x: hidden !important;
+  overflow-x:hidden !important;
   
   
 }
@@ -26,6 +26,7 @@ body {
   background: var(--primary-bg-gradient);
    font-family:"Aldrich" , sans-serif;
    
+   overflow-x:hidden !important;
 }
 
 h1 {
