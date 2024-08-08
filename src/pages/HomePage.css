@@ -5,12 +5,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 12rem 0;
+    margin:12rem 0;
     overflow: hidden;
+   
 }
 
 .homepage form {
-    width: 100%;
+    width: 95%;
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -18,13 +19,13 @@
     align-items: center;
     padding-bottom: 1rem;
     position: absolute;
-    bottom: 0;
+    top: 28vh;
     z-index: 4;
 }
 
 .welcome {
-    width: 100%;
-    height: 60rem;
+    width: 95%;
+    height: 20vh;
     padding: 0 5rem;
     display: flex;
     flex-direction: column;
@@ -33,6 +34,7 @@
     text-align: center;
     z-index: 3;
 }
+
 
 .welcome h1 {
     font-size: 7rem;
@@ -47,7 +49,7 @@
 }
 
 .user-login {
-    width: 45rem;
+    width: 75vw;
     height: 26rem;
     display: flex;
     flex-direction: column;
@@ -73,7 +75,7 @@
 }
 
 .user-login input{
-    width: 80%;
+    width: 100%;
     padding: 0.5rem 1.5rem;
     border: solid 2px black;
 }
@@ -86,7 +88,7 @@
 }
 
 .homepage-btn button {
-    width: 20rem;
+    width: 35vw;
     height: 8rem;
     font-size: 2.5rem;
     font-family:"Aldrich" , sans-serif; 
@@ -111,6 +113,7 @@
     top: 10%;
     left: 0;
     z-index: 2;
+    
 }
 #cloud2 {
     width: 25rem;
@@ -127,7 +130,7 @@
 }
 
 .guest-btn {
-    width: 42rem;
+    width: 75vw;
     height: 8rem;
     font-size: 2.5rem;
     font-family:"Aldrich" , sans-serif; 
@@ -139,4 +142,17 @@
     -moz-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
     box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
     margin-top: 2rem;
+}
+@media(max-height: 820px) {
+    .welcome{
+        height: 50vh;
+        justify-content:flex-start;
+        margin-bottom: 1rem;
+        h1{
+            font-size: 6rem;
+        }
+    }
+    .homepage form{
+        top: 40vh;
+    }
 }
