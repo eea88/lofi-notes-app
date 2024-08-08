@@ -117,6 +117,9 @@
   top: 15%;
   left: 0;
   z-index: 2;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 #create-cloud2 {
   width: 25rem;
@@ -124,6 +127,9 @@
   top: 39%;
   right: 0;
   z-index: 2;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 #create-cloud3 {
   width: 30rem;
@@ -131,6 +137,9 @@
   bottom: 23%;
   left: 0;
   z-index: 2;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 @media only screen 
