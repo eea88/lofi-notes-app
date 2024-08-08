@@ -1,363 +1,365 @@
 .event-detail-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  flex-direction: column;
+  .form-container {
     
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 10rem;
-    flex-direction: column;
-        .form-container{
-            height: 100%;
-            padding: 0;
-            gap: 5px;
-                textarea{
-                height: 80px;
-            }
-            .participants-search{
-                max-height: 20vh;
-                font-size: 1rem;
-                
-                overflow: scroll;
-            
-                    display: flex;
-                    flex-direction: column;
-                    flex-grid{
-                        display: block
-                    };
-                    align-items: baseline;
-                    justify-content: center;
-                    gap: 0rem;
-                    
-                        input{
-                            height: 2rem;
-                            width: 2rem;
-                        }
-                        label{
-                            width: 4rem;
-                        }
-                    div{
-                        margin: 0;
-                        padding: 0;
-                    }
+    padding: 0;
+    gap: 5px;
+    textarea {
+      height: 80px;
+    }
+    .participants-search {
+      max-height: 20vh;
+      font-size: 1rem;
 
-            }
+      overflow: scroll;
 
-        }
-        
+      display: flex;
+      flex-direction: column;
+      flex-grid {
+        display: block;
+      }
+      align-items: baseline;
+      justify-content: center;
+      gap: 0rem;
 
+      input {
+        height: 2rem;
+        width: 2rem;
+      }
+      label {
+        width: 4rem;
+      }
+      div {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
 }
 .event-card-container {
-    height: 90%;
-    width: 290px;
+  height: 90%;
+  width: 290px;
 
-    position: relative;
-    padding: 10px;
-    /* background: rgb(195,119,185); */
-    /* display: flex;
+  position: relative;
+  padding-top: 10px;
+  /* background: rgb(195,119,185); */
+  /* display: flex;
     flex-direction: ;
     justify-content: center;
     align-items: center; */
 
-    list-style: none;
-    overflow: scroll;
-    color: white;
+  list-style: none;
+  overflow: scroll;
+  color: white;
 
-    h2 {
-        font-size: 4rem;
-        padding: 20px 10px 10px 10px;
-    }
+  h2 {
+    font-size: 4rem;
+    padding: 20px 10px 10px 10px;
+  }
 
-    p {
-        font-size: 2rem;
-        line-height: 4rem;
-        padding: 10px;
-    }
+  p {
+    font-size: 2rem;
+    line-height: 4rem;
+    padding: 10px;
+  }
 }
 
 .event-card-container-frame {
-    
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10rem;
-    width: 320px;
-    height: 75%;
-    background-image: url(../assets/event-details-frame.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* border-image: url(../assets/event-details-frame.png) 5 stretch; */
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  width: 320px;
+  height: 75%;
+  background-image: url(../assets/event-details-frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border-image: url(../assets/event-details-frame.png) 5 stretch; */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
-.event-date{
-    position: absolute;
-    right: 10px;
-    top: 0px;
-    font-size: 2rem;
-    padding: 0px;
-    margin: 10px;
+.event-date {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  font-size: 2rem;
+  padding: 0px;
+  margin: 10px;
 }
-.participants-container{
-    gap: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    color: rgb(229, 229, 229)
+.participants-container {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  color: rgb(229, 229, 229);
 }
-.event-participants{
-    margin-left: 0.5rem;
-    font-size: 2rem;
+.event-participants {
+  margin-left: 0.5rem;
+  font-size: 2rem;
 }
 
 .edit-button-container {
-    width: 70vw ; 
-    width: 290px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 2rem;
-
+  width: 70vw;
+  width: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 2rem;
 }
 
 .edit-event-btn {
-        font-family: "aldrich", sans-serif;
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 220px;
-        height: 5rem;
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-        gap:10px;
+  font-family: "aldrich", sans-serif;
 
-        border: none;
-        border-radius: 1rem;
-        background-color: rgb(131,121,199);
-        color: white;
-        -webkit-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
-        -moz-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
-        box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 5rem;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  gap: 10px;
+
+  border: none;
+  border-radius: 1rem;
+  background-color: rgb(131, 121, 199);
+  color: white;
+  -webkit-box-shadow: 2px 2px 0px 2px rgba(100, 81, 173, 1);
+  -moz-box-shadow: 2px 2px 0px 2px rgba(100, 81, 173, 1);
+  box-shadow: 2px 2px 0px 2px rgba(100, 81, 173, 1);
 }
 
 .edit-event-form-btn {
-    font-family: "aldrich", sans-serif;
-        
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 12rem;
-    height: 5rem;
-    font-size: 2.5rem;
-    margin-bottom: 5rem;
-    gap:10px;
-    
+  font-family: "aldrich", sans-serif;
 
-    border: none;
-    border-radius: 1rem;
-    background-color: rgb(131,121,199);
-    color: white;
-    -webkit-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
-    -moz-box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
-    box-shadow: 2px 2px 0px 2px rgba(100,81,173,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 5rem;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  gap: 10px;
+
+  border: none;
+  border-radius: 1rem;
+  background-color: rgb(131, 121, 199);
+  color: white;
+  -webkit-box-shadow: 2px 2px 0px 2px rgba(100, 81, 173, 1);
+  -moz-box-shadow: 2px 2px 0px 2px rgba(100, 81, 173, 1);
+  box-shadow: 2px 2px 0px 2px rgba(100, 81, 173, 1);
 }
 
 .edit-event-form {
-    margin-top: 5rem;
-    width: 100%;
-    height: 75%;
-    background-color: rgb(195,119,185);
-    background-image: url(../assets/frame4.1.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  margin-top: 5rem;
+  width: 100%;
+  height: 75%;
+  background-color: rgb(195, 119, 185);
+  background-image: url(../assets/frame4.1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-container {
-    margin-top: 8rem;
-    width: 75% ;
-    height: 70%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-top: 20px;
-    input {
-        width: 35rem;
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-    }
+  margin-top: 2rem;
+  width: 75%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 20px;
+  input {
+    
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+  }
 
-    textarea {
-        width: 35rem;
-        height: 40px;
-        padding: 0.5rem 1rem;
-    }
-    gap:20px;
+  textarea {
+    width: 100%;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+  }
+  gap: 20px;
 
-    label {
-        font-size: 2rem;
-    }
+  label {
+    font-size: 2rem;
+  }
 }
 
-
 .task-container {
-    width: 257px;
-    border: solid white 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-direction: column;
-    
-
+  width: 257px;
+  border: solid white 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
 }
 
 .task {
-    width: 60vw;
-    height: 20rem;
-    background-color: white;
-    margin: 20px 0;
-    color: #222222;
-    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.66);
-    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.66);
-    font-size: 1rem;
-    overflow: scroll;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    border: 1rem solid;
-    border-image: url(../assets/task-box.png) 3 stretch;
-    border-radius: 1rem;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    position: relative;
+  width: 60vw;
+  height: 20rem;
+  background-color: white;
+  margin: 20px 0;
+  color: #222222;
+  -webkit-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.66);
+  font-size: 1rem;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1rem solid;
+  border-image: url(../assets/task-box.png) 3 stretch;
+  border-radius: 1rem;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  position: relative;
 }
 
-.check-box-container{
-    display: flex;
-    align-items: center;
-} 
-
-
+.check-box-container {
+  display: flex;
+  align-items: center;
+}
 
 .add-task-button {
-    margin: 2rem 0;
-    width: 20rem;
-    height: 5rem;
-    background-color: rgb(94, 98, 191);
-    -webkit-box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
-    -moz-box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
-    box-shadow: 2px 2px 0px 2px rgba(70,55,133,1);
-    border: none;
-    border-radius: 1rem;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
+  margin: 2rem 0;
+  width: 20rem;
+  height: 5rem;
+  background-color: rgb(94, 98, 191);
+  -webkit-box-shadow: 2px 2px 0px 2px rgba(70, 55, 133, 1);
+  -moz-box-shadow: 2px 2px 0px 2px rgba(70, 55, 133, 1);
+  box-shadow: 2px 2px 0px 2px rgba(70, 55, 133, 1);
+  border: none;
+  border-radius: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
 }
 
-
 .back-button-container {
-    width: 70vw ; 
-    
+  width: 70vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  button {
+    font-family: "aldrich", sans-serif;
+
+    width: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    button {
-        font-family: "aldrich", sans-serif;
-        
-        width: 8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30rem;
-        height: 5rem;
-        font-size: 3rem;
-    
-        border: none;
-        border-radius: 2rem;
-        background-color: white;
-        color: #222222;
+    width: 30rem;
+    height: 5rem;
+    font-size: 3rem;
 
-    }
+    border: none;
+    border-radius: 2rem;
+    background-color: white;
+    color: #222222;
+  }
 }
 
 .edit-task-button-container {
-    width: 6rem;
-    height: 3vh;
-    font-family: "Aldrich";
-    border: none;
-    border-radius: 1rem;
-    background-color: rgb(109,114,210);
-    color: rgb(255, 255, 255);
-
+  width: 6rem;
+  height: 3vh;
+  font-family: "Aldrich";
+  border: none;
+  border-radius: 1rem;
+  background-color: rgb(109, 114, 210);
+  color: rgb(255, 255, 255);
 }
-   
 
 .task-delete-btn {
-    border: none; 
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        image-rendering: pixelated;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: crisp-edges;
-        width: 3rem;
-        height: 3.5rem;
-    }
-}
-
-
-
-.task-btn-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 3rem;
-    gap: 2rem;
-}
-
-.checkbox {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 8rem;
-}
-
-.edit-event-return-btn {
-    width: 8rem;
-    height: 6.6rem;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 15%;
-    background-image: url(../assets/return-icon.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-
-    z-index: 4;
+    width: 3rem;
+    height: 3.5rem;
+  }
 }
+
+.task-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.checkbox {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 8rem;
+}
+
+.edit-event-return-btn {
+  width: 8rem;
+  height: 6.6rem;
+  position: absolute;
+  bottom: 8rem;
+  background-image: url(../assets/return-icon.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+
+  z-index: 4;
+}
+@media (max-height: 820px) {
+  .edit-event-return-btn {
+    bottom: -7rem;
+  }
+}
+@media (min-height: 1000px) {
+  .edit-event-return-btn {
+    bottom: 3rem;
+  }
+}
+@media (min-width: 800px) {
+  .edit-event-return-btn {
+    bottom: 10rem;
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 400px) {
+    .edit-event-return-btn {
+      bottom: 0rem;
+    }
+  }
