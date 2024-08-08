@@ -10,8 +10,7 @@ function About(){
             <div className="dev-container">
                 <img className="dev-picture" src="" alt="" />
                 <div className="dev-info">
-                    <h2>Esteban Escalante</h2>
-                    <p>blah blah blah</p>
+                    <h2> Esteban Escalante </h2>
                     <div className="socials">
                         <a target="_blank" href="https://github.com/eea88"><img className="github" src={github} alt="github icon" /></a>
                         <a target="_blank" href="https://www.linkedin.com/"><img className="linkedin" src={linkedIn} alt="linkedin icon" /></a>
@@ -21,8 +20,7 @@ function About(){
             <div className="dev-container">
                 <img className="dev-picture" src="" alt="" />
                 <div className="dev-info">
-                    <h2>Aquiles Hinestrosa</h2>
-                    <p>blah blah blah</p>
+                    <h2> Aquiles Hinestrosa </h2>
                     <div className="socials">
                         <a target="_blank" href="https://github.com/CelestialTrash"><img className="github" src={github} alt="github icon" /></a>
                         <a target="_blank" href="https://www.linkedin.com/in/aquiles-hinestrosa-5507a124b/"><img className="linkedin" src={linkedIn} alt="linkedin icon" /></a>
@@ -32,8 +30,7 @@ function About(){
             <div className="dev-container">
                 <img className="dev-picture" src="" alt="" />
                 <div className="dev-info">
-                    <h2>Kim Delgado</h2>
-                    <p>blah blah blah</p>
+                    <h2> Kim Delgado </h2>
                     <div className="socials">
                         <a target="_blank" href="https://github.com/Kiridea"><img className="github" src={github} alt="github icon" /></a>
                         <a target="_blank" href="https://www.linkedin.com/in/kim-delgado-developer"><img className="linkedin" src={linkedIn} alt="linkedin icon" /></a>
@@ -41,11 +38,10 @@ function About(){
                     
                 </div>
             </div>
-            <Link to="/">
-                <div className="back-button-container">
-                    <button>Back</button>
-                </div>
+            <div className="return-container">
+            <Link className="about-return-btn" to="/">
             </Link>
+            </div>
         </section>
     )
 }
