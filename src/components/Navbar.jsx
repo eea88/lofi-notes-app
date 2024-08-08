@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <h1>Lofi Plans</h1>
+        <h1>LoFi Plans</h1>
       </Link>
       <Link to={`/users/${userId}`}>
         <div className="user-icon">

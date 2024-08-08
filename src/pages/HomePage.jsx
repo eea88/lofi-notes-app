@@ -57,7 +57,7 @@ function HomePage() {
             <img id="stars" src={stars} alt="stars" />
             <div className="welcome">
                 <h2>Welcome to</h2>
-                <h1>Lofi Plans</h1>
+                <h1>LoFi Plans</h1>
                 <p>An app to organise events and create tasks with your friends and family!</p>
             </div>
 
