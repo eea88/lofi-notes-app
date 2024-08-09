@@ -37,7 +37,7 @@ Once Signed up users will go to their User page:
 In User Page they can create new events, go to an existing event, or delete an old one.
 Create Event is a Form where they can add date and guests
 
-![CreateEvent](./src/assets/screenshots/neweevent.png)
+![CreateEvent](./src/assets/screenshots/newevent.png)
 
 After Submitting they will go to the Event Page, where they can add new tasks. Edit page can also be accesed from the User Page.
 
