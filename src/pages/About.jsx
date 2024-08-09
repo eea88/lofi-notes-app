@@ -7,6 +7,7 @@ import cloud from "../assets/cloud.png";
 import cloud2 from "../assets/cloud2.png";
 import kimPic from "../assets/kim.jpg"
 import estebanPic from "../assets/esteban.png"
+import aquilesPic from "../assets/aquiles.jpeg"
 
 function About(){
     return(
@@ -24,7 +25,7 @@ function About(){
                 </div>
             </div>
             <div className="dev-container">
-                <img className="dev-picture" src="" alt="Aquiles Hinestrosa" />
+                <img className="dev-picture" src={aquilesPic} alt="Aquiles Hinestrosa" />
                 <div className="dev-info">
                     <h2> Aquiles Hinestrosa </h2>
                     <div className="socials">
@@ -44,10 +45,10 @@ function About(){
                     
                 </div>
             </div>
-            <div className="return-container">
+            {/* <div className="return-container">
             <Link className="about-return-btn" to="/">
             </Link>
-            </div>
+            </div> */}
             </div>
             <img id="create-cloud1" src={cloud} alt="cloud" />
             <img id="create-cloud3" src={cloud} alt="cloud" />
