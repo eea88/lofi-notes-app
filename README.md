@@ -23,21 +23,34 @@ Users can also edit their events after creation, changing the date and inviting 
 # Functionality
 
 User lands in the HomePage:
+
 ![HomePage](./src/assets/screenshots/homepage.png)
 
 User can then Sign up or log-in as guest. Please note that current server capacity only allows for 3 email requests per hour, so an error on signup may occur.
-![CreateUser] (./src/assets/screenshots/createuser.png)
+
+![CreateUser](./src/assets/screenshots/createuser.png)
+
 Once Signed up users will go to their User page:
-![UserPage]<!-- (./src/assets/screenshots/createevent.png). -->
+
+![UserPage](./src/assets/screenshots/createevent.png)
+
 In User Page they can create new events, go to an existing event, or delete an old one.
 Create Event is a Form where they can add date and guests
-![CreateEvent]<!-- (./src/assets/screenshots/neweevent.png). -->
+
+![CreateEvent](./src/assets/screenshots/neweevent.png)
+
 After Submitting they will go to the Event Page, where they can add new tasks. Edit page can also be accesed from the User Page.
-![EventDetails]<!-- (./src/assets/screenshots/eventdetails.png). -->
+
+![EventDetails](./src/assets/screenshots/eventdetails.png)
+
 In case user wants to delete a Task or Event they will get a warning
-![WarningExample]<!-- (./src/assets/screenshots/warningexample.png). -->
+
+![WarningExample](./src/assets/screenshots/warningexample.png)
+
 In the Event they can add task or modify existing tasks, they can also edit the Event
-![EventDetailEdit]<!-- (./src/assets/screenshots/eventedit.png). -->
+
+![EventDetailEdit](./src/assets/screenshots/eventedit.png)
+
 On Create & Edit events Users can search for their friends. Search functionality allows user to toggle several users and submit them if they are hidden
 
 ## Technologies Used
