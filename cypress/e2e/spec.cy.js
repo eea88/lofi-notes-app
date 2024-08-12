@@ -16,9 +16,10 @@ describe('template spec', () => {
     cy.get('input').first().type('test');
   })
   it('passes', () => {
+    cy.viewport(300,700)
     cy.visit('http://localhost:5173/');
     cy.contains('CREATE AS GUEST').click();
-    cy.get('.delete-button').click();
-    cy.contains('YES')
+    cy.get('.delete-button').first().click();
+    cy.contains('Yes')
   })
 })
